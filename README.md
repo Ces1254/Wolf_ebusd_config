@@ -26,8 +26,9 @@ The system includes:
 * Floor heating
 * 200 L domestic hot water (DHW) tank
   
-  
 The association of the slaves 51 and 75 to the master 70 and the MM-2 mixer unit is my deduction, but still hypothetical as I am missing a firm confirmation: any insight to confirm or reject is highly appreciated.  
+
+
 ---
 
 ## eBus Messaging Details
