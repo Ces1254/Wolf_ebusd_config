@@ -1,0 +1,210 @@
+type,circuit,level,name,comment,qq,zz,pbsb,id,*name,part,type,divisor/values,unit,comment
+*w,
+*r,
+#############################################
+# Main
+#############################################
+
+r,,,FHA_Mode,FHA mode,,,5022,cc6730,FHA_mode,,UIN,0=ODU Test;1=IDU Test;2=Anti-icing heating;3=Anti-icing DHW;4=Reduced flow;5=Pre-heating;6=Defrost;7=Pasteur function;8=Dhw_op;9=Post-Dhw_op;10=Heating;11=Post-heating;12=Active cooling;13=Cascade;14=Grid lock;15=Standby;16=Pump down;17=Post-cooling,,
+r,,,FHA_Status,FHA status,,,5022,cc6830,FHA_status,,UIN,0=Fault; 1=Disabled; 2=Disabled; 3=Standby; 4=Pre-purge; 5=Operation; 6=Defrost; 7=Post-purge; 8=Time shutdown; 9=Time shutdown; 10=Utility shutdwon; 11=OT shutdown; 12=Flow/Return > Max; 13=Active cooling; 16=Test; 18=Anti-moisture shutdown; 19=Max floor temp,,
+
+r,,,CompOperatingMode,Compressor operating mode,,,5022,cc1633,value,,UIN,0=Efficient;1=Quiet;0x8000=N/A,,
+
+r,,,TempBoiler,Boiler temperature (KF),,,5022,cc0d00,TempBoiler,,SIN,10,°C,PM004
+r,,,TempReturn,Return temperature (RL),,,5022,cc1600,value,,UIN,10,°C,
+r,,,TempHead,Header temperature (SAF),,,5022,cc1727,value,,UIN,10,°C,
+r,,,TempDhw,DHW current temp (SF),,,5022,cc0e00,TempDhw,,UIN,10,°C,
+#r,,,TempFloor,Floor loop temperature,,51,5022,cc0f00,value,,UIN,10,°C,In a circuit with a mixer unit, the FHA does not know about the floor temp
+r,,,Flow,Flow (DFL sensor),,,5022,ccd917,value,,UIN,10,L/min,
+r,,,PressCircuit,Heating circuit pressure (DHK),,,5022,cc1a27,PressCircuit,,UIN,100,bar,
+
+r,,,CompFreq,Compressor frequency,,,5022,cc6130,value,,UIN,,Hz,
+#r,,,ElBStatus,El Booster,,,5022,cc7930,ElBStatus,,BI5,0=Off;1=On,,V6
+
+#############################################
+# Settings and displays - Contractor mode
+#############################################
+
+r,,,ElBoosterStatus,Electric booster heater status,,,5022,cc6930,ElBoosterStatus,,UIN,0=Fault;1=Deactivated;2=Deactivated;3=Standby;4=Prepurge;5=Operation;6=Defrost;7=Postpurge;8=Time shutdown;9=Time shutdown;10=Grid shutdown;11=OT shutdown;12=VL/RL>Max;13=Cooling active;14=Airflow<min;15=DHW/MaxTh;16=Test;17=DHW/MaxTh;18=DHW;19=MaxTH,,
+r,,,AddHeater_Status,Status of additional heat generator,,,5022,cc6a30,AddHeater_Status,,UIN,0=Fault;1=Deactivated;2=Deactivated;3=Standby;4=Prepurge;5=Operation;6=Defrost;7=Postpurge;8=Time shutdown;9=Time shutdown;10=Grid shutdown;11=OT shutdown;12=VL/RL>Max;13=Cooling active;14=Airflow<min;15=DHW/MaxTh;16=Test;17=DHW/MaxTh;18=DHW;19=MaxTH,,
+r,,,TempOutdoor,Outside temperature,,,5022,cc0c00,TempOutdoor,,SIN,10,°C,
+r,,,TempBoilerSet,Set boiler temperature,,,5022,cc0200,TempBoilerSet,,UIN,10,°C,
+r,,,TempBoiler2,Boiler temperature 2,,,5022,cc5830,TempBoiler2,,UIN,10,°C,
+r,,,TempDHWSet,Set DHW temperature,,,5022,cc1300,TempDhwSet,,UIN,10,°C,
+r,,,TempAirSupply,Supply air temperature,,,5022,cc5530,TempAirSupply,,SIN,10,°C,
+r,,,TempAirOut,Extract air temp,,,5022,cc1333,TempAirOut,,SIN,10,°C,
+r,,,TempIntakeGas,Intake gas temperature,,,5022,cc1133,TempIntakeGas,,SIN,10,°C,
+r,,,TempHotGas,Hot gas temperature,,,5022,cc5730,TempHotGas,,UIN,10,°C,
+r,,,P_HotGas,Pressure hot gas,,,5022,cc0e33,P_HotGas,,SIN,10,bar,
+r,,,P_IntakeGas,Pressure intake gas,,,5022,cc0f33,P_IntakeGas,,SIN,10,bar,
+r,,,HTG_EEV,EEV HTG,,,5022,cc1433,HTG_EEV,,UIN,,,
+r,,,CLG_EEV,EEV CLG,,,5022,cc1533,CLG_EEV,,UIN,,,
+r,,,RotSpeed,Rotation speed ZHP,,,5022,cc5727,RotSpeed,,UIN,,%,
+
+r,,,Capacity,Current capacity specification Compressor,,,5022,cc6f01,Capacity,,UIN,,%,
+r,,,CompStatus,Compressor,,,5022,cc7930,Comp,,BI1,0=Off;1=On,,
+r,,,FanSpeed,Fan speed,,,5022,cc6327,FanSpeed,,UIN,,rpm,
+r,,,StatusNight,Status night operation,,,5022,cc792a,StatusNight,,UIN,0=Off;1=On,,
+r,,,Status_DPM,DPM Status,,,5022,cc0633,Status_DPM,,UIN,0xfe40=Open;0x7d0=Closed,,
+r,,,Status_SG,SG Status,,,5022,cc302a,Status_SG,,UIN,0=Off;1=normal operating mode;2=Grid lock;3=Recommended On;4=Forced On,,
+r,,,Status_PV,PV Status,,,5022,cc3f2a,Status_PV,,UIN,0=Off;1=normal operating mode;2=Grid lock;3=Temperature lock;4=PV boost active,,
+r,,,Input_E1,Input E1,,,5022,cc1627,value,,UIN,0xfe40=Open;0x7d0=Closed,,
+r,,,Input_E3,Input E3,,,5022,cc0433,value,,UIN,0xfe40=Open;0x7d0=Closed,,
+r,,,Input_E4,Input E4,,,5022,cc0533,value,,UIN,0xfe40=Open;0x7d0=Closed,,
+r,,,Output_A3,Output A3,,,5022,cc362a,value,,UIN,0xfe40=Off;0x7d0=On,,		#or E_Heat Phase1?
+r,,,Output_A4,Output A4,,,5022,cc372a,value,,UIN,0xfe40=Off;0x7d0=On,,
+r,,,PowerEl,Power consumption (WP + EHZ),,,5022,cc6530,PowerEl,,SIN,10,kW,
+r,,,PowerTh_2,Current secondary power,,,5022,cc6e30,PowerTh_2,,SIN,10,kW,
+r,,,PowerTh,Heating output,,,5022,cc5c30,PowerTh,,SIN,10,kW,
+r,,,PowerCl,Cooling capacity,,,5022,cc5b30,PowerCl,,SIN,10,kW,
+r,,,TimeOnTotal,Hours with mains power on,,,5022,cc24332533,value,,ULG,,hours,
+r,,,CompHrs,Compressor operating hours,,,5022,cc2a02,value,,UIN,,hours,
+r,,,t_ElBoosterOn,E-heating operating hours,,,5022,cc3e2a,value,,UIN,,hours,
+r,,,NoPowerOn,Number Power On,,,5022,cc5e27,value,,UIN,,,
+r,,,CompStarts,Compressor starts,,,5022,cc26022702,value,,ULG,,,
+r,,,FwVersionFHA,HCM-5 firmware,,,5022,cc9a01,FwVersionFHA,,UIN,100,,
+r,,,FwVersionODU,ODU firmware,,,5022,db1833,FwVersionODU,,UIN,100,,
+r,,,Correct_TempBoiler,T_boiler correction,,,5022,cc6c30,Correct_TempBoiler,,SIN,100,°C,
+r,,,Correct_TempBoiler2,T_boiler_2 correction,,,5022,cc0133,Correct_TempBoiler2,,SIN,100,°C,
+r,,,Correct_TempReturn,T_return correction,,,5022,cc6d30,Correct_TempReturn,,SIN,100,°C,
+r,,,BuildWeek,Manufacturing week,,,5022,cc7d2a,BuildWeek,,UIN,,,
+r,,,BuildYear,Year of manufacture,,,5022,cc7e2a,BuildYear,,UIN,23=2023;24=2024;25=2025;26=2026,,
+r,,,SerialNumber,Serial number,,,5022,cc802a7f2a,value,,ULG,,,
+r,,,ModeDhw,DHW operating mode,,,5022,4b1733,value,,UIN,0=Efficient;1=Fast,,FP002
+#############################################
+# Statistics - Contractor mode
+#############################################
+r,,,EnergyThHeating,Energy amount heating,,,5022,cc6f307030,value,,ULG,,kWh,
+r,,,EnergyThDhw,Energy amount DHW,,,5022,cc7a307b30,value,,ULG,,kWh,
+r,,,EnergyThCooling,Cooling energy amount,,,5022,cc7c307d30,value,,ULG,,kWh,
+r,,,EnElCurrDay,Consumption current day,,,5022,cc812a,value,,UIN,,kWh,
+r,,,EnThCurrDay,Heat generated current day,,,5022,cc822a,value,,UIN,,kWh,
+r,,,DPF_CurrDay,DPF current day,,,5022,cc2f33,value,,SIN,10,,
+r,,,EnElPrevDay,Consumption previous day,,,5022,ccf832,value,,UIN,,kWh,
+r,,,EnThPrevDay,Heat generated previous day,,,5022,ccf932,value,,UIN,,kWh,
+r,,,DPF_PrevDay,DPF previous day,,,5022,ccfa32,value,,SIN,10,,
+r,,,EnElCurrMonth,Consumption current month,,,5022,cc832a,value,,UIN,,kWh,
+r,,,EnThCurrMonth,Heat generated current month,,,5022,cc842a,value,,UIN,,kWh,
+r,,,MPF_CurrMonth,MPF current month,,,5022,cc3033,value,,SIN,10,,
+r,,,EnergyElCurrentYear,Consumption current year,,,5022,cc852a862a,value,,ULG,,kWh,
+r,,,EnergyThCurrentYear,Heat generated current year,,,5022,cc8b2a8c2a,value,,ULG,,kWh,
+r,,,SPF_CurrYear,SPF current year,,,5022,ccfd32,value,,SIN,10,,
+r,,,EnergyElPrevYear,Consumption previous year,,,5022,cc8d2a8e2a,value,,ULG,,kWh,
+r,,,EnergyThPrevYear,Heat generated previous year,,,5022,cc8f2a902a,value,,ULG,,kWh,
+r,,,SPF_PrevYear,SPF previou year,,,5022,cc0033,value,,SIN,10,,
+r,,,EnergyElYearM2,Consumption year before last,,,5022,cc912a922a,value,,ULG,,kWh,
+r,,,EnergyThYearM2,Heat generated year before last,,,5022,cc932a942a,value,,ULG,,kWh,
+r,,,SPF_YearM2,SPF year before last,,,5022,cc3133,value,,SIN,10,,FQ160
+
+#r,,,EnThPrevYr,Heat generated previous year,,,5022,ccff32,value,,UIN,,kWh,
+#r,,,EnElPrevYear,Consumption previous year,,,5022,ccfe32,value,,UIN,,kWh,
+#r,,,EnElCurrYear,Consumption current year,30,08,5022,ccfb32,value,,UIN,,kWh,
+#r,,,EnThCurrYear,Heat generated current year,30,08,5022,ccfc32,value,,UIN,,kWh,
+
+
+#############################################
+# Heatpump (WP) parameters - Contractor mode
+#############################################
+r,,,WP001,WP001 System Configuration,,,5022,ccc832,value,,UIN,0=Configuration 1;1=Configuration 2;2=Configuration 11;3=Configuration 12;4=Configuration 51;5=Configuration 52,,
+r,,,WP002,WP002 Function of input E1,,,5022,ccc932,value,,UIN,0=No Function;1=RT;2=WW;3=RT/WW;4=Zirkomat;5=MaxTh;6=Cooling control;7=Dew point switch clg;8=PV;9=Ext. fault;10=Pool,,
+r,,,WP003,WP003 Function of output A1,,,5022,ccca32,value,,UIN,0=No Function;1=Circulation pump 20%;2=Circulation pump 50%;3=Circulation pump 100%;4=Alarm output;5=Circulation auto;6=Abtauen;7=ZWE;8=Compressor On;9=EHZ On;10=ZUP extern;11=Cooling;12=Pool,,
+r,,,WP005,WP005 Function of input E3,,,5022,cccb32,value,,UIN,0=No Function;1=RT;2=WW;3=RT/WW;4=Zirkomat;5=MaxTh;6=Cooling control;7=Dew point switch clg;8=PV;9=Ext. fault;10=Pool,,
+r,,,WP006,WP006 Function of output A3,,,5022,cccc32,value,,UIN,0=No Function;1=Circulation pump 20%;2=Circulation pump 50%;3=Circulation pump 100%;4=Alarm output;5=Circulation auto;6=Abtauen;7=ZWE;8=Compressor On;9=EHZ On;10=ZUP extern;11=Cooling;12=Pool,,
+r,,,WP007,WP007 Function of input E4,,,5022,cccd32,value,,UIN,0=No Function;1=RT;2=WW;3=RT/WW;4=Zirkomat;5=MaxTh;6=Cooling control;7=Dew point switch clg;8=PV;9=Ext. fault;10=Pool,,
+r,,,WP008,WP008 Function of output A3,,,5022,ccce32,value,,UIN,0=No Function;1=Circulation pump 20%;2=Circulation pump 50%;3=Circulation pump 100%;4=Alarm output;5=Circulation auto;6=Abtauen;7=ZWE;8=Compressor On;9=EHZ On;10=ZUP extern;11=Cooling;12=Pool,,
+r,,,WP009,WP009 Temperature rise collector,,,5022,cccf32,value,,SIN,10,°C,
+r,,,WP010,WP010 Set spread,,,5022,cce92e,value,,SIN,10,°C,
+r,,,WP011,WP011 Hysteresis heating mode,,,5022,ccd032,value,,SIN,10,°C,
+r,,,WP012,WP012 Feed/heating circuit pump run-on,,,5022,ccd132,value,,UIN,,min,
+r,,,WP013,WP013 Delay for heating by add. ht generator heating,,,5022,ccec2e,value,,UIN,,min,
+r,,,WP014,WP014 Heating circuit pump run-on,,,5022,ccd232,value,,UIN,,min,
+r,,,WP015,WP015 HC pump rate maximum,,,5022,ccee2e,value,,UIN,,%,
+r,,,WP016,WP016 Enable spread control,,,5022,ccef2e,value,,UIN,0=Off;1=On,,
+r,,,WP017,WP017 Max. boiler temp. HZ TV-max,,,5022,ccd332,value,,SIN,10,°C,
+r,,,WP018,WP018 Min. boiler temp. TK-min,,,5022,ccf12e,value,,SIN,10,°C,
+r,,,WP019,WP019 HC pump rate minimum,,,5022,ccd432,value,,UIN,,%,
+r,,,WP020,WP020 Hysteresis hot water operation,,,5022,ccd532,value,,SIN,10,°C,
+r,,,WP021,WP021 Authorization max. time hot water operation,,,5022,ccf42e,value,,UIN,0=Off;1=On,,
+r,,,WP022,WP022 Max. Duration hot water operation,,,5022,cc8001,value,,UIN,,min,
+r,,,WP023,WP023 Delay ZWE Hot water operation,,,5022,ccf62e,value,,UIN,,min,
+r,,,WP025,WP025 SG/PV,,,5022,ccd832,value,,UIN,0=PV;1=SG,,
+r,,,WP026,WP026 External raising HTG,,,5022,ccd932,value,,SIN,10,°C,
+r,,,WP027,WP027 External raising DHW,,,5022,ccda32,value,,SIN,10,°C, 
+r,,,WP028,WP028 GMT management at SG/PV,,,5022,ccdb32,value,,UIN,0=Default;1=HP;2=El htg;3=HP + El htg parallel,,
+r,,,WP031,WP031 Bus address,,,5022,ccfe2e,value,,UIN,,,
+r,,,WP032,WP032 Effect of SG/PV on heating operation,,,5022,ccff2e,value,,UIN,0=Off;1=On,,
+r,,,WP033,WP033 Effect of SG/PV on cooling operation,,,5022,cc002f,value,,UIN,0=Off;1=On,,
+r,,,WP034,WP034 Bivalence point compressor SG/PV,,,5022,ccdc32,value,,SIN,10,°C,
+r,,,WP035,WP035 Bivalence point EHZ SG/PV,,,5022,ccdd32,value,,SIN,10,°C,
+r,,,WP036,WP036 Bivalence point ZWE SG/PV,,,5022,ccde32,value,,SIN,10,°C,
+r,,,WP037,WP037 External lowering K,,,5022,cc0733,value,,SIN,10,°C,
+r,,,WP040,WP040 Pump capacity WW,,,5022,ccdf32,value,,UIN,,%,
+r,,,WP045,WP045 Flow temperature for pool operation,,,5022,cc2a33,value,,SIN,10,°C,
+r,,,WP046,WP046 Delay HG pool mode,,,5022,cc2b33,value,,UIN,,min,
+r,,,WP047,WP047 Enable HG pool mode,,,5022,cc2c33,value,,UIN,0=Off;1=On,,
+r,,,WP053,WP053 External temp. authorization cooling mode,,,5022,cc142f,value,,SIN,10,°C,
+r,,,WP054,WP054 Min. flow temperature for cooling mode,,,5022,cce032,value,,SIN,10,°C,
+r,,,WP058,WP058 Authorization cooling mode,,,5022,cc192f,value,,UIN,0=Off;1=On,,
+r,,,WP059,WP059 Hysteresis cooling mode,,,5022,cce132,value,,SIN,10,°C,
+r,,,WP061,WP061 Night operation end,,,5022,cc1c2f,value,,VTM,,,
+r,,,WP062,WP062 Night operation start,,,5022,cc1d2f,value,,VTM,,,
+r,,,WP064,WP064 Limitation night mode,,,5022,cce232,value,,UIN,,%,
+r,,,WP065,WP065 Limitation day mode,,,5022,cce332,value,,UIN,,%,
+r,,,WP066,WP066 Activation night mode,,,5022,cce62e,value,,UIN,0=Off;1=On,,
+r,,,WP080,WP080 Dual mode point compressor,,,5022,cce832,value,,SIN,10,°C,
+r,,,WP090,WP090 Enable electric booster heater for heating mode,,,5022,cc392f,value,,UIN,0=Off;1=On,,
+r,,,WP091,WP091 Dual mode point electric booster heater,,,5022,cce932,value,,SIN,10,°C,
+r,,,WP092,WP092 Power-Off for electric booster heater,,,5022,cc3b2f,value,,UIN,0=Off;1=On,,
+r,,,WP094,WP094 Type of electric booster heater,,,5022,ccea32,value,,UIN,0=None;1=3 kW;2=6 kW;3=9 kW,,
+r,,,WP095,WP095 Authorization EHZ hot water operation,,,5022,cceb32,value,,UIN,0=Off;1=On,,
+r,,,WP101,WP101 Dual mode point add. ht. gen.,,,5022,ccec32,value,,SIN,10,°C,
+r,,,WP102,WP102 Add HG priority in heating mode,,,5022,cced32,value,,UIN,,,
+r,,,WP103,WP103 Add HG priority in DHW mode,,,5022,ccee32,value,,UIN,,,
+r,,,WP104,WP104 TWO via eBus,,,5022,cc472f,value,,UIN,0=Off;1=On,,
+r,,,WP105,WP105 EVU lock ZWE,,,5022,cc1a33,value,,UIN,0=Off;1=On,,
+r,,,WP110,WP110 Value of the S0 pulses FHA,,,5022,ccef32,value,,UIN,,pls/kWh,
+r,,,WP111,WP111 Quality of the S0 pulses Feed-in counter,,,5022,ccf032,value,,UIN,,pls/kWh,
+r,,,WP115,WP115 Current electricity price ZWE,,,5022,ccf232,value,,UIN,10,Cent/kWh,
+r,,,WP116,WP116 Current electricity price,,,5022,ccf332,value,,UIN,10,Cent/kWh,
+r,,,WP117,WP117 Hybrid operation,,,5022,ccf432,value,,UIN,0=Default;1=Economical;2=Ecological,,
+r,,,WP121,WP121 Max. compressor starts per hour,,,5022,cc582f,value,,UIN,,/h,
+
+###################################################################################
+
+#r,,,MI17,MI17 - Boiler overtemp during buffer loading,,,5022,cc2d00,value,,UIN,0x8000=N/A,°C,
+#r,,,Umsg01,Unknown msg 01,,,5022,cc7301,value,,UIN,,,FQ012_Unknown_0
+#r,,,Umsg02,Unknown msg 02,,,5022,ccbf0a,value,,UIN,,,FQ031_Unknown_0
+#r,,,Umsg03,Unknown msg 03,,,5022,cc8813,value,,UIN,,,FQ032_Unknown_N_A
+#r,,,Umsg04,Unknown msg 04,,,5022,cc3127,value,,UIN,,,FQ044_Unknown_N_A
+#r,,,Umsg05,Unknown msg 05,,,5022,cc3727,value,,UIN,,,FQ045_Unknown_14
+#r,,,Umsg06,Unknown msg 06,,,5022,cc3827,value,,UIN,,,FP033_Unknown
+#r,,,Umsg07,Unknown msg 07,,,5022,cc5427,value,,UIN,,,FQ046_Unknown_N_A
+#r,,,Umsg08,Unknown msg 08,,,5022,cc5927,value,,UIN,,,FQ048_Unknown_N_A
+#r,,,Umsg09,Unknown msg 09,,,5022,cc312a,value,,UIN,,,FQ052_Unknown_N_A
+#r,,,Umsg10,Unknown msg 10,,,5022,cc7a2a,value,,UIN,,,FQ058_Unknown_0
+#r,,,Umsg11,Unknown msg 11,,,5022,cc7b2a,value,,UIN,,,FQ059_Unknown_0
+#r,,,Umsg12,Unknown msg 12,,,5022,cc882a,value,,UIN,,,FQ066_Unknown_1
+#r,,,Umsg13,Unknown msg 13,,,5022,ccf12a,value,,UIN,,,FQ077_Unknown_0
+#r,,,Umsg14,Unknown msg 14,,,5022,cc5a30,value,,UIN,,,FQ095_Unknown_N_A
+#r,,,TempEvOmt,Evaporator temperature (OMT),,,5022,cc5330,value,,SIN,10,°C,,N_A
+#r,,,Umsg16,Unknown msg 16,,,5022,cc7330,value,,UIN,,,FQ108_Unknown_0
+#r,,,Umsg19,Unknown msg 19,,,5022,cc2033,value,,UIN,,,FQ148_Unknown_0
+#r,,,Umsg20,Unknown msg 20,,,5022,cc2133,value,,UIN,,,FQ149_Unknown_0
+#r,,,Umsg21,Unknown msg 21,,,5022,cc2233,value,,UIN,,,FQ150_Unknown_0
+#r,,,Umsg22,Unknown msg 22,,,5022,cc2333,value,,UIN,,,FQ151_Unknown_5
+#r,,,Umsg23,Unknown msg 23,,,5022,cc2633,value,,UIN,,,FQ154_Unknown_0
+#r,,,Umsg24,Unknown msg 24,,,5022,cc2733,value,,UIN,,,FQ154_Unknown_2
+#r,,,Umsg25,Unknown msg 25,,,5022,cc1b33,value,,UIN,,,FQ143_Unknown_1
+#r,,,Umsg26,Unknown msg 26,,,5022,cc1c33,value,,UIN,,,FQ144_Unknown_8589
+#r,,,Umsg27,Unknown msg 27,,,5022,cc1d33,value,,UIN,,,FQ145_Unknown_11
+#r,,,Umsg28,Unknown msg 28,,,5022,cc1e33,value,,UIN,,,FQ146_Unknown_13740
+#r,,,Umsg29,Unknown msg 29,,,5022,cc1f33,value,,UIN,,,FQ147_Unknown_0
+#r,,,Umsg30,Unknown msg 30,,,5022,cc2d33,value,,UIN,,,FQ157_Unknown_1
+#r,,,Umsg31,Unknown msg 31,,,5022,cc2e33,value,,UIN,,,FP012_Unknown_1
+
+#r,,,FanSpeed,Fan speed,,,5022,cc5f30,value,,UIN,,rpm,		#also with code 5327
+#r,,,OpHours,Hours with main power on,,,5022,cc2833,value,,UIN,,h,hours
+#r,,,TempBoilerMax,WP017 Max. boiler temp. HZ TV-max,,,5022,cc8402,value,,UIN,10,°C,temperature
+
+
+

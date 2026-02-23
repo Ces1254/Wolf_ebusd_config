@@ -1,0 +1,80 @@
+type,circuit,level,name,comment,qq,zz,pbsb,id,*name,part,type,divisor/values,unit,comment
+*w,
+*r,
+r,,,Date_BM2,Date BM-2,,,5022,00b027,,,UIN,,,date to be decoded
+r,,,Time_BM2,Time BM-2,,,5022,00b127,,,VTM,,,
+r,,,TempDhwSet,BM DHW set temp,,85,5022,001300,value,,SIN,10,°C,temperature
+w,,,TempDhwSet,BM DHW set temp,,85,5023,cc1300,value,,SIN,10,°C,,value,,ULG,0x0000015d=W,,write command
+r,,,DhwMode,DHW mode select,,,5022,007527,value,,UIN,0=Standby;1=Auto;2=Permanent,,
+w,,,DhwMode,DHW mode select,,,5023,cc7527,value,,UIN,0=Standby;1=Auto;2=Permanent,,,value,,ULG,0x0000015d=W,,write command
+r,,,OneTimeDhw,One time DHW heating,,,5022,008527,value,,UIN,0=Off;1=On,,
+r,,,HtgMode,Heating mode,,,5022,009527,value,,UIN,0=Standby;1=Auto;2=Time operation,,
+w,,,HtgMode,Heating mode,,,5023,cc9527,value,,UIN,0=Standby;1=Auto;2=Time operation,,,value,,ULG,0x0000015d=W,,write command
+r,,,DhwStatus,DHW status,,,5022,009627,value,,UIN,0=Disabled;1=Initialising;2=Pasteur function;3=Remote Control;4=One time DHW;5=On;6=Ready;7=Solar operation;8=Saving on;9=Off;10=On;11=Ready;12=Standby;13=SmartHome;14=SmartGrid,,
+r,,,HolidaysMode,Holidays mode,,,5022,00a127,value,,UIN,0=Off;1=On,,
+r,,,HM_EndTime,Holiday mode end time,,,5022,00a227,,,VTM,,,
+r,,,HM_EndDate,Holiday mode end date,,,5022,00a327,,,UIN,,,date to be decoded
+r,,,HM_StartTime,Holiday mode start time,,,5022,00a427,,,VTM,,,
+r,,,HM_StartDate,Holiday mode start date,,,5022,00a527,,,UIN,,,date to be decoded
+r,,,PartyMode,Party mode,,,5022,00a627,value,,UIN,0=Off;1=On,,
+r,,,PM_EndTime,Party mode end time,,,5022,00a727,,,VTM,,,
+r,,,PM_EndDate,Party mode end date,,,5022,00a827,,,UIN,,,date to be decoded
+r,,,PM_StartTime,Party mode start time,,,5022,00a927,,,VTM,,,
+r,,,PM_StartDate,Party mode start date,,,5022,00aa27,,,UIN,,,date to be decoded
+r,,,ProgUnitFunct,Programming unit function,,,5022,008927,ProgUnitFunct,,UIN,0=System;1=Mixerunit 1;2=Mixerunit 2;3=Mixerunit 3;4=Mixerunit 4;5=Mixerunit 5;6=Mixerunit 6;7=Mixerunit 7,,
+r,,,SmarthomeSys,Smarthome system,,,5022,00a82a,SmarthomeSys,,UIN,0=No connection;1357=alphaEOS;2468=wibutler Pro,,
+r,,,HeatingDemand,Heating demand,,,5022,00ab27,HeatingDemand,,UIN,0=Initializing;1=Disabled;2=Floor drying;3=Service mode;4=Remote control;5=Party mode;6=Holidays mode;7=Auto on;8=Auto off;9=Permanent operation;10=Reduced operation;11=Standby;12=Externally disabled;13=SmartHome;14=AutoOnCool;15=AutoOffCool;16=PermCooling,,
+r,,,HeatingStatus,Heating status,,,5022,00ac27,HeatingStatus,,UIN,0=Off;1=Heating;2=Reduced op;3=Eco;4=Reduced stop;5=OT shutdown;6=RT shutdown;7=OT anti icing;8=RT anti icing;9=SmartHome;10=DHW priority;11=Cooling;12=Moisture stop;13=DHW pre-purge,,
+r,,,TimeProgramDhw,Time program DHW,,,5022,00ae27,TimeProgramDhw,,UIN,,,
+r,,,TimeProgramHtg,Time program heating,,,5022,00af27,TimeProgramHtg,,UIN,,,
+r,,,TempRoom,Room temperature,,85,5022,00b427,value,,SIN,10,°C,
+#r,,,TempFloor,Floor loop temperature,,85,5022,008727,value,,SIN,10,°C,
+#r,,,B_TempOutdoor,Outside temperature,,85,5022,00d327,value,,SIN,10,°C,
+r,,,B_TempOutdoor,Outside temperature,,85,5022,000c00,value,,SIN,10,°C,
+r,,,TempOutdoorAvg,Average outside temperature,,85,5022,00c327,value,,SIN,10,°C,
+r,,,Temp_ECO_ABS,ECO/ABS,,85,5022,001701,value,,SIN,10,°C,
+r,,,EcoFactor,Economy factor,,85,5022,008127,value,,SIN,10,,
+r,,,Temp_W_S_Change,Winter/Summer change over,,85,5022,001601,value,,SIN,10,°C,
+r,,,CircuitType,Circuit type,,85,5022,002d23,value,,UIN,0=Heating circuit;1=Heating + cooling circuit;2=Cooling circuit,,
+r,,,TempDay,Day temperature,,85,5022,007d27,value,,SIN,10,°C,
+w,,,TempDay,Day temperature,,85,5023,cc7d27,value,,SIN,10,°C,,value,,ULG,0x0000015d=W,,write command
+r,,,SetValCorrection,Set value correction,,85,5022,00b527,value,,SIN,10,°C,
+w,,,SetValCorrection,Set value correction,,85,5023,ccb527,value,,SIN,10,°C,,value,,ULG,0x0000015d=W,,write command
+r,,,RoomInfluence,Room influence,,85,5022,008b02,value,,UIN,0=Off;1=On,,
+r,,,TempHtgCrvLow,Heating curve low end temperature,,85,5022,007b27,value,,SIN,10,°C,
+r,,,TempHtgCrvStrt,Heating curve starting point,,85,5022,007e27,value,,SIN,10,°C,
+r,,,TempHtgCrvStd,Standard outside temperature for heating curve,,85,5022,007f27,value,,SIN,10,°C,
+r,,,TempFlowHtgCrv,Flow temperature for heating  curve,,85,5022,007c27,value,,SIN,10,°C,
+r,,,TempClgCrvStart,Cooling curve start temperature,,85,5022,00482a,value,,SIN,10,°C,
+r,,,TempClgCrvEnd,Cooling curve end temperature,,85,5022,00492a,value,,SIN,10,°C,
+r,,,TempClgFlwStart,Cooling curve flow start temperature,,85,5022,004a2a,value,,SIN,10,°C,
+r,,,TempClgFlwEnd,Cooling curve flow end temperature,,85,5022,00472a,value,,SIN,10,°C,
+r,,,ControlMode,Control Mode,,85,5022,009214,,,UIN,0=Emergency;1=OT control;2=Room temp control;3=OT with room temp influence,,
+r,,,FwVersionBM,Firmware version BM-2,,,5022,00c927,value,,UIN,100,,
+
+#################################################################
+# Room controller (BM-2) parameters - Contractor mode
+#################################################################
+
+r,,,A00,A00 - Room influence factor,,,5022,000f01,value,,UIN,,K/K,
+r,,,A04,A04 - Outside sensor averaging time,,,5022,008401,value,,UIN,,hours,
+r,,,A05,A05 - Adjustment room sensor BM-2,,,5022,000901,value,,SIN,10,°C,
+r,,,A07,A07 - Pasteur function,,,5022,000101,value,,UIN,0=Off;1=Mon;2=Tue;3=Wed;4=Thu;5=Fri;6=Sat;7=Sun;8=Daily,,
+r,,,A08,A08 - Maintenance message,,,5022,006a02,value,,UIN,0=Off;1=Runtime-based;2=Date-based,,
+r,,,A10,A10 - Enable parallel mode,,,5022,002300,value,,UIN,0=Off;1=On,,
+r,,,A11,A11 - Room temperature-dependent shutdown,,,5022,00bd02,value,,UIN,0=Off;1=On,,
+r,,,A12,A12 - Setback stop,,,5022,00be02,value,,SIN,10,°C,
+r,,,A13,A13 - Minimum DHW temperature,,,5022,009801,value,,SIN,10,°C,
+r,,,A15,A15 - Outside temperature correction,,,5022,00a305,value,,SIN,10,°C,
+r,,,A16,A16 - Pure room controller,,,5022,00324e,value,,UIN,0=Off;1=On,,
+r,,,A17,A17 - Room temperature PI controller Kp,,,5022,002900,value,,UIN,,K/K,
+r,,,A18,A18 - Room temperature PI controller Tn,,,5022,002a00,value,,UIN,10,K/(K*h),
+r,,,A23,A23 - Pasteur function start time,,,5022,009d27,A23_PasteurFuncStartTime,,VTM,,,
+r,,,A24,A24 - Program selector common,,,5022,009227,value,,UIN,0=Off;1=On,,
+r,,,A26,A26 - Activation SmartHome,,,5022,00a02a,value,,UIN,0=Off;1=On,,
+
+#############################################################
+# Current time and date is regularly broadcasted by a BM-2 unit
+# See bc message 30,fe,0700 (30 is the BM-2 master address)
+#############################################################
+

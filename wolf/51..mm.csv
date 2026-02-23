@@ -1,0 +1,23 @@
+type,circuit,level,name,comment,qq,zz,pbsb,id,*name,part,type,divisor/values,unit,comment
+*w,
+*r,
+#############################################
+# Main
+#############################################
+r,,,TempFloor,Floor circuit temperature,,,5022,cc0f00,value,,UIN,10,°C,MP001
+r,,,TempFloorSet,Mixer Set Temperature,,,5022,2c0400,value,,SIN,10,°C,
+r,,,FloorCircPump,Floor Circulation Pump,,,5022,705200,,,UIN,0=Off;1=On,,
+
+r,,,MI01,MI01 Minimum limit mixer circuit TV-min,,,5022,812b01,value,,SIN,10,°C,
+r,,,MI02,MI02 Maximum limit mixer circuit TV-max,,,5022,642800,value,,SIN,10,°C,
+r,,,MI03,MI03 Heating curve distance,,,5022,ed1101,value,,SIN,10,°C,
+r,,,MI05,MI05 Configuration,,,5022,6a210a,value,,UIN,,,
+r,,,MI06,MI06 Heating circuit run-on time,,,5022,c14201,value,,UIN,,min,
+r,,,MI07,MI07 P range mixer,,,5022,618f01,value,,SIN,10,°C,
+r,,,MI10,MI10 eBus feed,,,5022,45fbfd,value,,UIN,2=Auto,,not to be modified
+
+r,,,MMt_01,Mixer motor 1 status,,,5022,5c5600,value,,UIN,0=Off;1=Closing;2=Opening,,
+r,,,MMt_02,Mixer motor 2 status,,,5022,005700,value,,UIN,0=Off;1=Closing;2=Opening,,
+
+#r,,,MMP05,MM Op Status 5,,,5022,5c0100,value,,UIN,,,ping
+

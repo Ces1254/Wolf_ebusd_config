@@ -1,0 +1,254 @@
+type,circuit,level,name,comment,qq,zz,pbsb,id,*name,part,type,divisor/values,unit,comment
+*u,
+#
+##### Are u there? -requests by Wolfnet
+#
+u,fha,,FP001,FHA ping,ff,08,5022,5c0100,value,,UIN,,,
+u,mm,,MP001,MM ping,ff,51,5022,5c0100,value,,UIN,,,
+u,bm,,BP001,BM ping,ff,35,5022,5c0100,value,,UIN,,,
+#
+##### Read requests by Wolfnet to FHA unit - CRC is correctly implemented 
+#
+u,fha,,Pa032L,FHA Op Status 02,ff,08,5022,aa2602,CompStarts,,UIN,,,
+u,fha,,Pa032H,FHA Op Status 03,ff,08,5022,f62702,CompStarts_HB,,UIN,,,
+u,fha,,PM104H,FHA Op Status 06,ff,08,5022,4e7f2a,SerialNo_HB,,UIN,,,
+u,fha,,PM104L,FHA Op Status 07,ff,08,5022,da802a,SerialNo,,UIN,,,
+u,fha,,Pa202,FHA Op Status 08,ff,08,5022,330033,SPF_PrevYear,,SIN,10,,
+u,fha,,Pa213,FHA Op Status 09,ff,08,5022,f31533,CLG_EEV,,UIN,,,
+u,fha,,Pa215,FHA Op Status 10,ff,08,5022,4b1733,ModeDhw,,UIN,0=Efficient;1=Fast,,
+u,fha,,Pa216,FHA Op Status 11,ff,08,5022,db1833,FwVersion,,UIN,100,,
+u,fha,,Pa233,FHA Op Status 12,ff,08,5022,c32e33,value,,UIN,,,Unknown
+u,fha,,Pa234,FHA Op Status 13,ff,08,5022,9f2f33,DPF_CurrDay,,SIN,10,,
+u,fha,,Pa235,FHA Op Status 14,ff,08,5022,bf3033,MPF_CurrMonth,,SIN,10,,
+u,fha,,Pa236,FHA Op Status 15,ff,08,5022,e33133,SPF_Year_M2,,SIN,10,,
+
+u,fha,,FP004L,FHA Op Status 04,ff,08,5022,662802,t_OnTotal,,UIN,,h,
+u,fha,,FP004H,FHA Op Status 05,ff,08,5022,3a2902,t_OnTotal_HB,,UIN,,h,
+
+u,fha,,FP020_FP021_FP022_FP023_FP024,FHA Op Status 20_24,ff,08,5022,23ff2e002f142f192f1c2f,WP032_SG_PVonHtg,,UIN,0=Off;1=On,,,WP033_SG_PVonCoolng,,UIN,0=Off;1=On,,,WP053_ExtTempAuthCooling,,SIN,10,°C,,WP058_CoolingEnabled,,UIN,0=Off;1=On,,,WP061_NightModeEnd,,VTM,,,
+u,fha,,FP025_FP026_FP027_FP028_FP029,FHA Op Status 25_29,ff,08,5022,325e27302a3e2a3f2a792a,NoPowerOn,,UIN,,,,Status_SG,,UIN,0=Off;1=normal operating mode;2=Grid lock;3=Recommended On;4=Forced On,,,t_ElBoosterOn,,UIN,,hours,,Status_PV,,UIN,0=Off;1=normal operating mode;2=Grid lock;3=Temperature lock;4=PV boost active,,,StatusNight,,UIN,0=Off;1=On,,
+u,fha,,FP030_FP031_Pa047_FP033_FP034,FHA Op Status 30_34,ff,08,5022,3f162717271a2738275727,Input_E1,,UIN,0xfe40=Open;0x7d0=Closed,,,TempHeader,,SIN,10,°C,,P_Circuit,,UIN,100,bar,,value,,UIN,,,,RotSpeed,,UIN,,%,
+u,fha,,Pa001_Pa003_Pa004_Pb005_FP039,FHA Op Status 35_39,ff,08,5022,5402000c000d000e001300,TempBoilerSet,,SIN,10,°C,,TempOutdoor,,SIN,10,°C,,TempBoiler,,SIN,10,°C,,TempDhw,,SIN,10,°C,,TempDhwSet,,SIN,10,°C,
+u,fha,,FP040_FP041_FP042_Fd013_Fd014,FHA Op Status 40_44,ff,08,5022,571533173318332f333033,CLG_EEV,,UIN,,,,ModeDhw,,UIN,0=Efficient;1=Fast,,,FwVersionODU,,UIN,100,,,DPF_CurrDay,,SIN,10,,,MPF_CurrMonth,,SIN,10,,
+u,fha,,Pa008_Pa025_FP047_FP048_Pa043,FHA Op Status 45_49,ff,08,5022,5b16006f019a012a02d917,TempReturn,,SIN,10,°C,,Capacity,,UIN,,%,,FwVersionFHA,,UIN,100,,,CompHrs,,UIN,,h,,Flow,,UIN,10,L/min,
+u,fha,,Pa147_FP051_FP052_FP053_FP054,FHA Op Status 50_54,ff,08,5022,6268306e307930fa32fd32,FHA_Status,,UIN,0=Fault;1=Disabled;2=Disabled;3=Standby;4=Pre-purge;5=Operation;6=Defrost;7=Post-purge;8=Time shutdown;9=Time shutdown;10=Utility shutdwon;11=OT shutdown;12=Flow/Return > Max;13=Active cooling;14=Undefined;15=Undefined;16=Test;17=Undefined;18=Dewpoint trigger;19=Max floor temp,,,PowerTh,,SIN,10,kW,,PumpStatus,,HEX:2,,,,DPF_PrevDay,,SIN,10,,,SPF_CurrYear,,SIN,10,,
+u,fha,,FP055_FP056_FP057_FP058_FP059,FHA Op Status 55_59,ff,08,5022,76d232d332d432d532d832,WP014_HtgPumpRunOn,,UIN,,min,,WP017_BoilerMaxTemp_HZ_TV_Max,,SIN,10,°C,,WP019_PumpRateMin,,UIN,,%,,WP020_HystDhwOp,,SIN,10,°C,,WP025_SG_PV,,UIN,0=PV;1=SG,,
+u,fha,,FP060_Fd051_Fd052_Fd053_Fd054,FHA Op Status 60_64,ff,08,5022,826d306e307930fa32fd32,CorrectTempReturn,,SIN,100,°C,,PowerTh,,SIN,10,kW,,PumpStatus,,HEX:2,,,,DPF_PrevDay,,SIN,10,,,SPF_CurrYear,,SIN,10,,
+u,fha,,Pb047_Fd027_Pa144_Pa145_Pa146,FHA Op Status 65_69,ff,08,5022,a01a273e2a613065306730,P_Circuit,,UIN,100,bar,,t_ElBoosterOn,,UIN,,hours,,CompFreq,,UIN,,Hz,,PowerEl,,SIN,10,kW,,FHA_mode,,UIN,0=ODU Test;1=IDU Test;2=Anti-icing heating;3=Anti-icing DHW;4=Reduced flow;5=Pre-heating;6=Defrost;7=Pasteur function;8=Dhw_op;9=Post-Dhw_op;10=Heating;11=Post-heating;12=Active cooling;13=Cascade;14=Grid lock;15=Standby;16=Pump down;17=Post-cooling,,
+u,fha,,Pa137_FP071_Pa139_FP073_Pa142,FHA Op Status 70_74,ff,08,5022,a45530573058305b305c30,TempAirSupply,,SIN,10,°C,,TempHotGas,,SIN,10,°C,,TempBoiler2,,SIN,10,°C,,PowerCl,,SIN,10,kW,,PowerTh,,SIN,10,kW,
+u,fha,,Fd073_Pb142_FP077_Pb144_Pb145,FHA Op Status 75_79,ff,08,5022,dc5b305c305f3061306530,PowerCl,,SIN,10,kW,,PowerTh,,SIN,10,kW,,FanSpeed,,UIN,,rpm,,CompFreq,,UIN,,Hz,,PowerEl,,SIN,10,kW,
+u,fha,,Fd052_FP081_FP082_FP083_FP084,FHA Op Status 80_84,ff,08,5022,df79300133043305330633,PumpStatus,,HEX:2,,,,CorrectTempBoiler2,,SIN,100,°C,,Input_E3,,UIN,0xfe40=Open;0x7d0=Closed,,,Input_E4,,UIN,0xfe40=Open;0x7d0=Closed,,,Status_DPM,,UIN,0xfe40=Open;0x7d0=Closed,,
+u,fha,,Fd077_Pa148_FP087_Fd099_Fd060,FHA Op Status 85_89,ff,08,5022,cc5f3069306a306c306d30,FanSpeed,,UIN,,rpm,,ElBoosterStatus,,UIN,0=Fault;1=Deactivated;2=Deactivated;3=Standby;4=Prepurge;5=Operation;6=Defrost;7=Postpurge;8=Time shutdwon;9=Time shutdwon;10=Grid shutdwon;11=OT Shutdwon;12=VL/RL>Max.;13=Active Cooling;14=Supply air < min;15=DHW/MaxTh;16=Test;17=DHW/MaxTh;18=DHW;19=MaxTH,,,AddHeater_Status,,UIN,0=Fault;1=Disabled;2=Disabled;3=Standby;4=Pre-purge;5=Operation;6=Defrost;7=Post-purge;8=Time shutdown;9=Time shutdown;10=Utility shutdwon;11=OT shutdown;12=VL/RL > Max;13=Active cooling;14=Supply air < min;15=DHW/Max Th;16=Test;17=DHW/Max Th;18=DHW;19=MaxTH,,,CorrectTempBoiler,,SIN,100,°C,,CorrectTempReturn,,SIN,100,°C,
+u,fha,,Fd026_Fd028_Fd029_FP093_FP094,FHA Op Status 90_94,ff,08,5022,be302a3f2a792a7d2a7e2a,Status_SG,,UIN,0=Off;1=normal operating mode;2=Grid lock;3=Recommended On;4=Forced On,,,Status_PV,,UIN,0=Off;1=normal operating mode;2=Grid lock;3=Temperature lock;4=PV boost active,,,StatusNight,,UIN,0=Off;1=On,,,BuildWeek,,UIN,,,,BuildYear,,UIN,24=2024;25=2025;26=2026,,
+u,fha,,Pb146_Pb147_Pb148_Fd087_FP099,FHA Op Status 95_99,ff,08,5022,c06730683069306a306c30,FHA_Mode,,UIN,0=ODU Test;1=IDU Test;2=Anti-icing heating;3=Anti-icing DHW;4=Reduced flow;5=Pre-heating;6=Defrost;7=Pasteur function;8=Dhw_op;9=Post-Dhw_op;10=Heating;11=Post-heating;12=Active cooling;13=Cascade;14=Grid lock;15=Standby;16=Pump down;17=Post-cooling,,,FHA_Status,,UIN,0=Fault;1=Disabled;2=Disabled;3=Standby;4=Pre-purge;5=Operation;6=Defrost;7=Post-purge;8=Time shutdown;9=Time shutdown;10=Utility shutdwon;11=OT shutdown;12=Flow/Return > Max;13=Active cooling;14=Undefined;15=Undefined;16=Test;17=Undefined;18=Dewpoint trigger;19=Max floor temp,,,ElBoosterStatus,,UIN,0=Fault;1=Deactivated;2=Deactivated;3=Standby;4=Prepurge;5=Operation;6=Defrost;7=Postpurge;8=Time shutdwon;9=Time shutdwon;10=Grid shutdwon;11=OT Shutdwon;12=VL/RL>Max.;13=Active Cooling;14=Supply air < min;15=DHW/MaxTh;16=Test;17=DHW/MaxTh;18=DHW;19=MaxTH,,,AddHeater_Status,,UIN,0=Fault;1=Disabled;2=Disabled;3=Standby;4=Pre-purge;5=Operation;6=Defrost;7=Post-purge;8=Time shutdown;9=Time shutdown;10=Utility shutdwon;11=OT shutdown;12=VL/RL > Max;13=Active cooling;14=Supply air < min;15=DHW/Max Th;16=Test;17=DHW/Max Th;18=DHW;19=MaxTH,,,CorrectTempBoiler,,SIN,100,°C,
+u,fha,,FP100_Fd081_Fd082_Fd083_Fd084,FHA Op Status 100_104,ff,08,5022,cb00330133043305330633,SPF_PrevYear,,SIN,10,,,CorrectTempBoiler2,,SIN,100,°C,,Input_E3,,UIN,0xfe40=Open;0x7d0=Closed,,,Input_E4,,UIN,0xfe40=Open;0x7d0=Closed,,,Status_DPM,,UIN,0xfe40=Open;0x7d0=Closed,,
+u,fha,,Fd047_Fd030_Fd033_Fd034_Fd025,FHA Op Status 105_109,ff,08,5022,b39a011627382757275e27,FwVersionFHA,,UIN,100,,,Input_E1,,UIN,0xfe40=Open;0x7d0=Closed,,,value,,UIN,,,,RotSpeed,,UIN,,%,,NoPowerOn,,UIN,,,
+u,fha,,FP110_FP111_FP112_FP113_FP114,FHA Op Status 110_114,ff,08,5022,b30e330f33113313331433,P_HotGas,,SIN,10,bar,,P_IntakeGas,,SIN,10,bar,,TempIntakeGas,,SIN,10,°C,,TempAirOut,,SIN,10,°C,,HTG_EEV,,UIN,,,
+u,fha,,Pb008_Pb025_Fd048_Pb043_Fd031,FHA Op Status 115_119,ff,08,5022,3316006f012a02d9171727,TempReturn,,SIN,10,°C,,Capacity,,UIN,,%,,CompHrs,,UIN,,h,,Flow,,UIN,10,L/min,,TempHeader,,SIN,10,°C,
+u,fha,,FP120_FP121_FP122_FP123_FP124,FHA Op Status 120_124,ff,08,5022,c28001e62ee92eec2eee2e,WP022_MaxDurationDhwOp,,UIN,,min,,WP066_ActivationNightMode,,UIN,0=Off;1=On,,,WP010_SetSpread,,SIN,10,°C,,WP013_DelayActAdd_Htg,,UIN,,min,,WP015_MaxPumpRate,,UIN,,%,
+u,fha,,FP125_FP126_FP127_FP128_FP129,FHA Op Status 125_129,ff,08,5022,1aef2ef12ef42ef62efe2e,WP016_EnSpreadControl,,UIN,0=Off;1=On,,,WP018_MinBoilerTemp,,SIN,10,°C,,WP021_MaxDhwOpEnabled,,UIN,0=Off;1=On,,,WP023_Delay_Zwe_Dhw,,UIN,,min,,WP031_FHA_eBus_address,,UIN,,,
+u,fha,,FP130_FP131_FP132_FP133_FP134,FHA Op Status 130_134,ff,08,5022,bf1d2f392f3b2f472f582f,WP062_NightModeStart,,VTM,,,,WP090_EnableElBoosterHtgMode,,UIN,0=Off;1=On,,,WP092_PowOffForElBooster,,UIN,0=Off;1=On,,,WP104_TWOviaEbus,,UIN,0=Off;1=On,,,WP121_CompMaxStart_perHour,,UIN,,/h,
+u,fha,,Fd093_Fd094_Pb137_Fd071_Pb139,FHA Op Status 135_139,ff,08,5022,087d2a7e2a553057305830,BuildWeek,,UIN,,,,BuildYear,,UIN,24=2024;25=2025;26=2026,,,TempAirSupply,,SIN,10,°C,,TempHotGas,,SIN,10,°C,,TempBoiler2,,SIN,10,°C,
+#
+##### Read requests by Wolfnet to MM unit - CRC is correctly implemented 
+#
+u,mm,,PM002,MM Op Status 2,ff,51,5022,2c0400,TempFloorSet,,SIN,10,,°C,
+u,mm,,PM006,MM Op Status 3,ff,51,5022,900f00,TempFloor,,SIN,10,°C,
+u,mm,,PM010,MM Op Status 8,ff,51,5022,642800,MI02_MaxLimitMM,,SIN,10,°C,
+u,mm,,PM014,MM Op Status 4,ff,51,5022,705200,FloorCircPump,,UIN,0=Off;1=On,,
+u,mm,,PM015,MM Op Status 5,ff,51,5022,5c5600,MMt_01,,UIN,0=Off;1=Closing;2=Opening,,
+u,mm,,PM016,MM Op Status 6,ff,51,5022,005700,MMt_02,,UIN,0=Off;1=Closing;2=Opening,,
+u,mm,,PM020,MM Op Status 9,ff,51,5022,ed1101,MI03_HtgCrvDistance_MM,,SIN,10,°C,
+u,mm,,PM023,MM Op Status 7,ff,51,5022,812b01,MI01_MinLimitMM,,SIN,10,°C,
+u,mm,,PM024,MM Op Status11,ff,51,5022,c14201,MI06_HtgRunOnTime_MM,,UIN,,min,
+u,mm,,PM029,MM Op Status12,ff,51,5022,618f01,MI07_Prange_MM,,SIN,10,°C,
+u,mm,,Pa041,MM Op Status10,ff,51,5022,6a210a,MI05_ConfigurationMM,,UIN,,,
+u,mm,,PM238,MM Op Status13,ff,51,5022,45fbfd,MI10_EbusFeed,,UIN,2=Auto,,
+#
+##### Read requests by Wolfnet to BM-2 unit (slave 35) - CRC is correctly implemented 
+#
+u,bm,,PM034,BM Op Status 2,ff,35,5022,a66a02,A08_MaintainNote,,UIN,0=Off;1=Runtime-based;2=Date-based,,
+u,bm,,PM085,BM Op Status 3,ff,35,5022,5bb027,Date_BM2,,UIN,,,Wolf date format
+u,bm,,PM086,BM Op Status 4,ff,35,5022,07b127,Time_BM2,,VTM,,,
+u,bm,,PM007_PM057_PM064_PM069_PM071,BM Op Status 15_19,ff,35,5022,2f1300752785279627a127,TempDhwSet,,SIN,10,°C,,DhwMode,,UIN,0=Standby;1=Auto;2=Permanent,,,OneTimeDhw,,UIN,0=Off;1=On,,,DhwStatus,,UIN,0=Disabled;1=Initialising;2=Pasteur function;3=Remote Control;4=One time DHW;5=On;6=Ready;7=Solar operation;8=Saving on;9=Off;10=On;11=Ready;12=Standby;13=SmartHome;14=SmartGrid,,,HolidaysMode,,UIN,0=Off;1=On,,
+u,bm,,PM009_PM011_PM012_PM017_PM018,BM Op Status 35_39,ff,35,5022,49230029002a0001010901,A10_ParallelMode,,UIN,0=Off;1=On,,,A17_RmTempKp,,UIN,,K/K,,A18_RmTempTn,,UIN,10,K/(K*h),,A07_PasteurFunct,,UIN,0=Off;1=Mon;2=Tue;3=Wed;4=Thu;5=Fri;6=Sat;7=Sun;8=Daily,,,A05_RmSensCorrect,,SIN,10,°C,
+u,bm,,PM019_PM028_PM030_PM034_PM037,BM Op Status 30_34,ff,35,5022,c20f01840198016a02bd02,A00_RmInfFactor,,UIN,,K/K,,A04_OT_AvgTime,,UIN,,hours,,A13_MinDhwTempSet,,SIN,10,°C,,A08_MaintainMex,,UIN,0=Off,,,A11_RmTempShutdwn,,UIN,0=Off;1=On,,
+u,bm,,PM038_PM040_BP047_PM066_PM067,BM Op Status 45_49,ff,35,5022,a7be02a305762789279227,A12_SetbackStop,,SIN,10,°C,,A15_OT_Correction,,SIN,10,°C,,value,,UIN,,,,ProgUnitFunct,,UIN,0=System;1=Mixerunit 1;2=Mixerunit 2;3=Mixerunit 3;4=Mixerunit 4;5=Mixerunit 5;6=Mixerunit 6;7=Mixerunit 7,,,A24_PrgSelComm,,UIN,0=Off;1=On,,
+u,bm,,PM072_PM073_PM074_PM075_PM076,BM Op Status 05_09,ff,35,5022,9ba227a327a427a527a627,HM_EndTime,,VTM,,,,HM_EndDate,,UIN,,,Wolf date format,HM_StartTime,,VTM,,,,HM_StartDate,,UIN,,,Wolf date format,PartyMode,,UIN,0=Off;1=On,,
+u,bm,,PM077_PM078_PM079_PM080_PM083,BM Op Status 10_14,ff,35,5022,33a727a827a927aa27ae27,PM_EndTime,,VTM,,,,PM_EndDate,,UIN,,,Wolf date format,PM_StartTime,,VTM,,,,PM_StartDate,,UIN,,,Wolf date format,TimeProgramDhw,,UIN,,,
+u,bm,,PM070_PM085_PM086_PM090_Pa091,BM Op Status 40_44,ff,35,5022,0f9d27b027b127c927d327,A23_PasteurFuncStartTime,,VTM,,,,Date_BM2,,UIN,,,Wolf date format,Time_BM2,,VTM,,,,FwVersionBM,,UIN,100,,,TempOutdoor,,SIN,10,°C,
+u,bm,,PM115,BM Op Status 53,ff,35,5022,e6a02a,A26_SmrtHomeActivation,,UIN,0=Off;1=On,,
+u,bm,,PM116,Smarthome system,ff,35,5022,bea82a,SmarthomeSys,,UIN,0=No connection;1357=alphaEOS;2468=wibutler Pro,,
+u,bm,,PM237,A16 - Pure room controller,ff,35,5022,7a324e,A16_PureRoomControl,,UIN,0=Off;1=On,,
+#
+##### read requests by Wolfnet to BM-2 unit (slave 85) - BM-2 FHA profile
+#
+u,bm,,PM042_PM056_PM060_PM065_PM081,BM Op Status 01_05,ff,85,5022,83921474277d278727ab27,ControlMode,,UIN,0=Emergency;1=OT control;2=Room temp control;3=OT with room temp influence,,,ModeRemote,,UIN,1=Off; 3=Winter op; 5=Summer op,,,TempRoomSet,,SIN,10,°C,,TempFloor,,SIN,10,°C,,HeatingDemand,,UIN,0=Initializing;1=Disabled;2=Floor drying;3=Schornsteinfeger;4=Remote control;5=Party mode;6=Holidays mode;7=Auto on;8=Auto off;9=Permanent operation;10=Reduced operation;11=Standby;12=Externally disabled;13=SmartHome;14=AutoOnCool;15=AutoOffCool;16=PermCooling,,
+u,bm,,PM082_PM084_Pa087_Pa088_Pa089,BM Op Status 06_10,ff,85,5022,77ac27af27b427b527c327,HeatingStatus,,UIN,0=Off;1=Heating;2=Reduced op;3=Eco;4=Reduced stop;5=OT shutdown;6=RT shutdown;7=OT anti icing;8=RT anti icing;9=SmartHome;10=DHW priority;11=Cooling;12=Moisture stop;13=DHW pre-purge,,,TimeProgramHtg,,UIN,,,,TempRoom,,SIN,10,°C,,SetValCorrection,,SIN,10,°C,,TempOutdoorAvg,,SIN,10,°C,
+u,bm,,PM063_PM097_PM098_PM099_PM100,BM Op Status 11_05,ff,85,5022,0a8127472a482a492a4a2a,EcoFactor,,SIN,10,,,TempFloor,,SIN,10,°C,,TempClgCrvStrt,,SIN,10,°C,,Temp,,SIN,10,°C,,TempMixSet,,SIN,10,°C,
+u,bm,,OP016_PM058_PM059_PM061_PM062,BM Op Status 16_20,ff,85,5022,d344237b277c277e277f27,value,,UIN,,,,TempHtgCrvLow,,SIN,10,°C,,TempFlwHtgCrv,,SIN,10,°C,,TempHtgCrvStrt,,SIN,10,°C,,TempHtgCrvStd,,SIN,10,°C,
+u,bm,,PM021_PM022_PM036_PM044_OP025,BM Op Status 21_25,ff,85,5022,07160117018b022d234023,Temp_W_S_Change,,SIN,10,°C,,TempECO_ABS,,SIN,10,°C,,RoomInfluence,,UIN,0=Off;1=On,,,CircuitType,,UIN,0=Heating circuit;1=Heating + cooling circuit;2=Cooling circuit,,,value,,UIN,,,
+u,bm,,PM042_PM060_Pa065_PM081_PM082,BM Op Status 31_35,ff,85,5022,c792147d278727ab27ac27,value,,UIN,,,,TempRoomSet,,SIN,10,°C,,TempFloor,,SIN,10,°C,,HeatingDemand,,UIN,0=Initializing;1=Disabled;2=Floor drying;3=Schornsteinfeger;4=Remote control;5=Party mode;6=Holidays mode;7=Auto on;8=Auto off;9=Permanent operation;10=Reduced operation;11=Standby;12=Externally disabled;13=SmartHome;14=AutoOnCool;15=AutoOffCool;16=PermCooling,,,HeatingStatus,,UIN,0=Off;1=Heating;2=Reduced op;3=Eco;4=Reduced stop;5=OT shutdown;6=RT shutdown;7=OT anti icing;8=RT anti icing;9=SmartHome;10=DHW priority;11=Cooling;12=Moisture stop;13=DHW pre-purge,,
+
+u,bm,,PM087,BM Op Status 43,ff,85,5022,77b427,TempRoom,,SIN,10,°C,
+u,bm,,PM088,BM Op Status 41,ff,85,5022,2bb527,SetValCorrection,,SIN,10,°C,
+u,bm,,PM089,BM Op Status 42,ff,85,5022,4bc327,TempOutdoorAvg,,SIN,10,°C,
+#
+#####  Read requests by BM2 controller to FHA unit - CRC not used - fixed to 0xcc
+#
+u,fha,,PM001,FHA Op Status 02,30,08,5022,cc0200,TempBoilerSet,,SIN,10,°C,
+u,fha,,PM003,FHA Op Status 03,30,08,5022,cc0c00,TempOutdoor,,SIN,10,°C,
+u,fha,,PM004,FHA Op Status 04,30,08,5022,cc0d00,TempBoiler,,SIN,10,°C,
+u,fha,,PM005,FHA Op Status 05,30,08,5022,cc0e00,TempDhw,,SIN,10,°C,
+u,fha,,PM008,FHA Op Status 06,30,08,5022,cc1600,TempReturn,,SIN,10,°C,
+u,fha,,Pa013,FHA Op Status 07,30,08,5022,cc2d00,MI17,,UIN,0x8000=N/A,,this goes to MM-1
+u,fha,,PM025,FHA Op Status 11,30,08,5022,cc6f01,Capacity,,UIN,,%,
+u,fha,,PM026,FHA Op Status 12,30,08,5022,cc7301,value,,UIN,,,Unknown_0
+u,fha,,PM031,FHA Op Status 13,30,08,5022,cc9a01,FwVersionFHA,,UIN,100,,
+u,fha,,PM032L,FHA Op Status 21,,08,5022,cc2602,CompStarts,,UIN,,,  
+u,fha,,PM032H,FHA Op Status 22,,08,5022,cc2702,CompStarts_HB,,UIN,,,
+u,fha,,PM033,FHA Op Status 24,30,08,5022,cc2a02,CompHrs,,UIN,,hours,
+u,fha,,PM043,FHA Op Status 33,30,08,5022,ccd917,Flow,,UIN,10,L/min,
+u,fha,,PM045,FHA Op Status 41,30,08,5022,cc1627,Input_E1,,UIN,0xfe40=Open;0x7d0=Closed,,
+u,fha,,PM046,FHA Op Status 42,30,08,5022,cc1727,TempHeader,,SIN,10,°C,
+u,fha,,PM047,FHA Op Status 43,30,08,5022,cc1a27,P_Circuit,,UIN,100,bar,
+u,fha,,PM048,FHA Op Status 44,30,08,5022,cc3127,value,,UIN,0x8000=N/A,,N_A_Unknown
+u,fha,,PM049,FHA Op Status 45,30,08,5022,cc3727,value,,UIN,,,Unknown_14
+u,fha,,PM050,FHA Op Status 45,30,08,5022,cc3827,value,,UIN,,,Unknown_
+u,fha,,PM051,FHA Op Status 46,30,08,5022,cc5427,value,,UIN,0x8000=N/A,,Unknown_N_A
+u,fha,,PM052,FHA Op Status 47,30,08,5022,cc5727,RotSpeed,,UIN,,%,
+u,fha,,PM053,FHA Op Status 48,30,08,5022,cc5927,value,,UIN,0x8000=N/A,,Unknown_N_A
+u,fha,,PM054,FHA Op Status 49,30,08,5022,cc5e27,NoPowerOn,,UIN,,,
+u,fha,,PM055,FHA Op Status 50,30,08,5022,cc6327,FanSpeed,,UIN,,rpm,
+u,fha,,PM092,FHA Op Status 51,30,08,5022,cc302a,Status_SG,,UIN,0=Off;1=normal operating mode;2=Grid lock;3=Recommended On;4=Forced On,,
+u,fha,,PM093,FHA Op Status 53,30,08,5022,cc362a,OutA3,,UIN,0xfe40=Off;0x7d0=On,,
+u,fha,,PM094,FHA Op Status 54,30,08,5022,cc372a,OutA4,,UIN,0xfe40=Off;0x7d0=On,,
+u,fha,,PM095,FHA Op Status 55,30,08,5022,cc3e2a,t_ElBoosterOn,,UIN,,hours,
+u,fha,,PM096,FHA Op Status 56,30,08,5022,cc3f2a,Status_PV,,UIN,0=Off;1=normal operating mode;2=Grid lock;3=Temperature lock;4=PV boost active,,
+u,fha,,PM101,FHA Op Status 57,30,08,5022,cc792a,StatusNight,,UIN,0=Off;1=On,,
+u,fha,,PM102,FHA Op Status 78,30,08,5022,cc7d2a,BuildWeek,,UIN,,,
+u,fha,,PM103,FHA Op Status 79,30,08,5022,cc7e2a,BuildYear,,UIN,23=2023;24=2024;25=2025;26=2026,,
+u,fha,,PM105,FHA Op Status 60,30,08,5022,cc812a,EnElCurrDay,,UIN,,kWh,
+u,fha,,PM106,FHA Op Status 61,30,08,5022,cc822a,EnThCurrDay,,UIN,,kWh,
+u,fha,,PM107,FHA Op Status 62,30,08,5022,cc832a,EnElCurrMonth,,UIN,,kWh,
+u,fha,,PM108,FHA Op Status 63,30,08,5022,cc842a,EnThCurrMonth,,UIN,,kWh,
+u,fha,,PM109L,FHA Op Status 64,30,08,5022,cc852a,EnElCurrYear,,UIN,,kWh,
+u,fha,,PM109H,FHA Op Status 65,30,08,5022,cc862a,EnElCurrYear_HB,,UIN,,kWh,
+u,fha,,PM110L,FHA Op Status 67,,08,5022,cc8b2a,EnThCurrYear,,UIN,,kWh,
+u,fha,,PM110H,FHA Op Status 68,30,08,5022,cc8c2a,EnThCurrYear_HB,,UIN,,kWh,
+u,fha,,PM111L,FHA Op Status 69,30,08,5022,cc8d2a,EnElPrevYear,,UIN,,kWh,
+u,fha,,PM111H,FHA Op Status 70,30,08,5022,cc8e2a,EnElPrevYear_HB,,UIN,,kWh,
+u,fha,,PM112L,FHA Op Status 71,30,08,5022,cc8f2a,EnThPrevYear,,UIN,,kWh,
+u,fha,,PM112H,FHA Op Status 72,30,08,5022,cc902a,EnThPrevYear_HB,,UIN,,kWh,
+u,fha,,PM113L,FHA Op Status 73,30,08,5022,cc912a,EnElYearM2,,UIN,,kWh,
+u,fha,,PM113H,FHA Op Status 74,30,08,5022,cc922a,EnElYearM2_HB,,UIN,,kWh,
+u,fha,,PM114L,FHA Op Status 75,30,08,5022,cc932a,EnThYearM2,,UIN,,kWh,
+u,fha,,PM115H,FHA Op Status 76,30,08,5022,cc942a,EnThYearM2_HB,,UIN,,kWh,
+u,fha,,PM128,FHA Op Status 81,30,08,5022,cc142f,WP053_ExtTempAuthCooling,,SIN,10,°C,
+u,fha,,PM129,FHA Op Status 82,30,08,5022,cc192f,WP058_CoolingEnabled,,UIN,0=Off;1=On,,
+u,fha,,PM136,FHA Op Status 91,,08,5022,cc5330,TempEvOmt,,SIN,10,°C,N/A in FHA
+u,fha,,PM137,FHA Op Status 92,30,08,5022,cc5530,TempAirSupply,,SIN,10,°C,
+u,fha,,PM138,FHA Op Status 93,30,08,5022,cc5730,TempHotGas,,SIN,10,°C,
+u,fha,,PM139,FHA Op Status 94,30,08,5022,cc5830,TempBoiler2,,SIN,10,°C,
+u,fha,,PM140,FHA Op Status 95,30,08,5022,cc5a30,TempCondIrt,,SIN,10,°C,N/A in FHA
+u,fha,,PM141,FHA Op Status 96,30,08,5022,cc5b30,PowerCl,,SIN,10,kW,
+u,fha,,PM142,FHA Op Status 97,30,08,5022,cc5c30,PowerTh,,SIN,10,kW,
+u,fha,,PM143,FHA Op Status 97,30,08,5022,cc5f30,FanSpeed,,UIN,,rpm,
+u,fha,,PM144,FHA Op Status 98,30,08,5022,cc6130,CompFreq,,UIN,,Hz,
+u,fha,,PM145,FHA Op Status 99,30,08,5022,cc6530,PowerEl,,SIN,10,kW,
+u,fha,,PM146,FHA Op Status100,30,08,5022,cc6730,FHA_Mode,,UIN,0=ODU Test;1=IDU Test;2=Anti-icing heating;3=Anti-icing DHW;4=Reduced flow;5=Pre-heating;6=Defrost;7=Pasteur function;8=Dhw_op;9=Post-Dhw_op;10=Heating;11=Post-heating;12=Active cooling;13=Cascade;14=Grid lock;15=Standby;16=Pump down;17=Post-cooling,,
+u,fha,,PM147,FHA Op Status101,30,08,5022,cc6830,FHA_Status,,UIN,0=Fault;1=Disabled;2=Disabled;3=Standby;4=Pre-purge;5=Operation;6=Defrost;7=Post-purge;8=Time shutdown;9=Time shutdown;10=Utility shutdown;11=OT shutdown;12=Flow/Return > Max;13=Active cooling;16=Test;18=Anti-moisture shutdown;19=Max floor temp,,
+u,fha,,PM148,FHA Op Status102,30,08,5022,cc6930,ElBoosterStatus,,UIN,0=Fault;1=Disabled;2=Disabled;3=Standby;4=Pre-purge;5=Operation;6=Defrost;7=Post-purge;8=Time shutdown;9=Time shutdown;10=Utility shutdwon;11=OT shutdown;12=VL/RL > Max;13=Active cooling;14=Supply air < min;15=Undefined;16=Test;17=Undefined;18=TPW;19=Max TH,,
+u,fha,,PM149,FHA Op Status103,30,08,5022,cc6a30,AddHeater_Status,,UIN,0=Fault;1=Disabled;2=Disabled;3=Standby;4=Pre-purge;5=Operation;6=Defrost;7=Post-purge;8=Time shutdown;9=Time shutdown;10=Utility shutdwon;11=OT shutdown;12=VL/RL > Max;13=Active cooling;14=Supply air < min;15=DHW/Max Th;16=Test;17=DHW/Max Th;18=DHW;19=Max TH,,
+u,fha,,PM150,FHA Op Status104,30,08,5022,cc6c30,CorrectTempBoiler,,SIN,100,°C,
+u,fha,,PM151,FHA Op Status104,30,08,5022,cc6d30,CorrectTempReturn,,SIN,100,°C,
+u,fha,,PM152,FHA Op Status105,30,08,5022,cc6e30,PowerTh,,SIN,10,kW,   #FQ097 used instead
+u,fha,,PM153L,Energy amount heating (LB),30,08,5022,cc6f30,EnThHeatngTot,,UIN,,kWh,	
+u,fha,,PM153H,Energy amount heating (HB),30,08,5022,cc7030,EnThHeatngTot_HB,,UIN,,kWh,
+u,fha,,PM154,FHA Op Status108,30,08,5022,cc7330,value,,UIN,,,Unknown_0
+u,fha,,V1_V2_V3_V4_V5_V6_V7_V8_Vstatus,Valve Status109,30,08,5022,cc7930,HeatCircPump,,BI0,0=Off;1=On,,,Comp,,BI1,0=Off;1=On,,,V_HtgDhw,,BI2,0=Htg;1=DHW,,,V4,,BI3,0=Off;1=On,,,V5,,BI4,0=Off;1=On,,,ElBooster,,BI5,0=Off;1=On,,,V7,,BI6,0=Off;1=On,,,V8,,BI7,0=Off;1=On,,,Status,,HEX,,,
+u,fha,,PM158L,FHA Op Status110,30,08,5022,cc7a30,EnThDhwTot,,UIN,,kWh,
+u,fha,,PM158H,FHA Op Status112,30,08,5022,cc7b30,EnThDhwTot_HB,,UIN,,kWh,
+u,fha,,PM159L,FHA Op Status113,30,08,5022,cc7c30,EnThCoolngTot,,UIN,,kWh,
+u,fha,,PM159H,FHA Op Status114,30,08,5022,cc7d30,EnThCoolngTot_HB,,UIN,,kWh,
+u,fha,,PM175,FHA Op Status120,30,08,5022,ccd932,WP026_ExternalRaisingHtg,,SIN,10,°C,
+u,fha,,PM176,FHA Op Status121,30,08,5022,ccda32,WP027_ExternalRaisingDhw,,SIN,10,°C, 
+u,fha,,PM198,FHA Op Status122,30,08,5022,ccf832,EnElPrevDay,,UIN,,kWh,
+u,fha,,PM199,FHA Op Status123,30,08,5022,ccf932,EnThPrevDay,,UIN,,kWh,
+u,fha,,PM200,FHA Op Status124,30,08,5022,ccfa32,DPF_PrevDay,,SIN,10,,
+u,fha,,PM201,FHA Op Status127,30,08,5022,ccfd32,SPF_CurrYear,,SIN,10,,
+u,fha,,PM202,FHA Op Status131,30,08,5022,cc0033,SPF_PrevYear,,SIN,10,,
+u,fha,,PM203,FHA Op Status132,30,08,5022,cc0133,CorrectTempBoiler2,,SIN,100,°C,
+u,fha,,PM206,FHA Op Status133,30,08,5022,cc0633,Status_DPM,,UIN,0xfe40=Open;0x7d0=Closed,,
+u,fha,,PM208,FHA Op Status134,30,08,5022,cc0e33,P_HotGas,,SIN,10,bar,
+u,fha,,PM209,FHA Op Status135,30,08,5022,cc0f33,P_IntakeGas,,SIN,10,bar,N_A
+u,fha,,PM210,FHA Op Status136,30,08,5022,cc1133,TempIntakeGas,,SIN,10,°C,
+u,fha,,PM211,FHA Op Status137,30,08,5022,cc1333,TempAirOut,,SIN,10,°C,N_A
+u,fha,,PM212,FHA Op Status138,30,08,5022,cc1433,HTG_EEV,,UIN,,,
+u,fha,,PM213,FHA Op Status139,30,08,5022,cc1533,CLG_EEV,,UIN,,,
+u,fha,,PM214,FHA Op Status140,30,08,5022,cc1633,CompOperatingMode,,UIN,0=Efficient;1=Quiet;0x8000=N/A,,
+u,fha,,PM215,FHA Op Status141,30,08,5022,cc1733,ModeDhw,,UIN,0=Efficient;1=Fast,,
+u,fha,,PM216,FHA Op Status142,30,08,5022,cc1833,FwVersionODU,,UIN,100,,
+u,fha,,PM218,FHA Op Status143,30,08,5022,cc1b33,value,,UIN,,,Unknown_1
+u,fha,,PM219,FHA Op Status144,30,08,5022,cc1c33,value,,UIN,,,Unknown_8589
+u,fha,,PM220,FHA Op Status145,30,08,5022,cc1d33,value,,UIN,,,Unknown_11
+u,fha,,PM221,FHA Op Status146,30,08,5022,cc1e33,value,,UIN,,,Unknown_13740
+u,fha,,PM222,FHA Op Status147,30,08,5022,cc1f33,value,,UIN,,,Unknown_0
+u,fha,,PM223,FHA Op Status148,30,08,5022,cc2033,value,,UIN,,,Unknown_0
+u,fha,,PM224,FHA Op Status149,30,08,5022,cc2133,value,,UIN,,,Unknown_0
+u,fha,,PM225,FHA Op Status150,30,08,5022,cc2233,value,,UIN,,,Unknown_0
+u,fha,,PM226,FHA Op Status151,30,08,5022,cc2333,value,,UIN,,,Unknown_5
+u,fha,,PM227L,FHA Op Status152,30,08,5022,cc2433,t_PowOn,,UIN,,h,
+u,fha,,PM227H,FHA Op Status153,30,08,5022,cc2533,t_PowOn_HB,,UIN,,h,
+u,fha,,PM228,FHA Op Status156,30,08,5022,cc2833,t_PowOn,,UIN,,h,  #single precision
+u,fha,,PM234,FHA Op Status158,30,08,5022,cc2f33,DPF_CurrDay,,SIN,10,,
+u,fha,,PM235,FHA Op Status159,30,08,5022,cc3033,MPF_CurrMonth,,SIN,10,,
+u,fha,,PM236,FHA Op Status160,30,08,5022,cc3133,SPF_YearM2,,SIN,10,,
+
+u,fha,,FQ023,FHA Op Status 23,30,08,5022,cc2802,t_OnTotal,,UIN,,hours, #see FP004
+u,fha,,FQ031,FHA Op Status 31,30,08,5022,ccbf0a,value,,UIN,,,Unknown_0
+u,fha,,FQ032,FHA Op Status 32,30,08,5022,cc8813,value,,UIN,0x8000=N/A,,Unknown_N_A
+u,fha,,FQ052,FHA Op Status 52,30,08,5022,cc312a,value,,UIN,0x8000=N/A,,Unknown_N_A
+u,fha,,FQ058,FHA Op Status 58,30,08,5022,cc7a2a,value,,UIN,,,Unknown_0
+u,fha,,FQ059,FHA Op Status 59,30,08,5022,cc7b2a,value,,UIN,,,Unknown_0
+u,fha,,FQ066,FHA Op Status 66,30,08,5022,cc882a,value,,UIN,,,Unknown_1
+u,fha,,FQ077,FHA Op Status 77,30,08,5022,ccf12a,value,,UIN,,,Unknown_0
+u,fha,,FQ125,FHA Op Status125,30,08,5022,ccfb32,EnElCurrYear,,UIN,,kWh,single precision
+u,fha,,FQ126,FHA Op Status126,30,08,5022,ccfc32,EnThCurrYear,,UIN,,kWh,single precision
+u,fha,,FQ128,FHA Op Status128,30,08,5022,ccfe32,EnElPrevYear,,UIN,,kWh,single precision
+u,fha,,FQ129,FHA Op Status129,30,08,5022,ccff32,EnThPrevYear,,UIN,,kWh,single precision
+u,fha,,FQ154,FHA Op Status154,30,08,5022,cc2633,value,,UIN,,,Unknown_0
+u,fha,,FQ155,FHA Op Status155,30,08,5022,cc2733,value,,UIN,,,Unknown_2
+u,fha,,FQ157,FHA Op Status157,30,08,5022,cc2d33,value,,UIN,,,Unknown_1
+
+#
+##### Read requests by BM-2 to MM-1 unit
+# 
+u,mm,,Pa005,MM Op Status 20,30,51,5022,cc0e00,N_A,,SIN,10,°C, #Mixer doesn't know about Dhw Temp when in conf 8
+u,mm,,PM013,MI17 - Boiler overtemp,30,51,5022,cc2d00,value,,SIN,10,°C,
+u,mm,,PM039,Max DHW temp (?),30,51,5022,ccc702,value,,SIN,10,°C,unused
+u,mm,,PM041,MI05 - Configuration,30,51,5022,cc210a,Configuration,,UIN,,,
+
+#
+# Command from FHA to Mixer Unit MM1 - The command has data including Mixer Set Temperature (D2B - Mdata bytes 3&4)
+u,mm,,FS101_FS102_FS103_FS104,FHA Op Status 01,70,51,5014,,MixerStatus,,UIR,0=Standby;1=Pump on;2=Mdwn;3=P+Mdwn;4=Mup;5=P+Mup,,,TempFloor,,D2B,,°C,,p1,,HEX:4,,,
+
+# Broadcast messages
+u,bm,,BM2_target,room controller target values,f1,fe,0800,,N_A,,D2B,,,,TempOutdoor,,D2B,,°C,,N_A,,D2B,,,,TempDhwSet,,D2B,,°C,DHW set temperature
+u,bm,,PM091_BP022_BP023_BP024_BP025_BP026_BP027,BM2 operational data,30,fe,0301,,TempOutdoor,,SIN,10,°C,,TempRoom,,SIN,10,°C,,value,,HEX:2,,,,value,,HEX:2,,,,value,,HEX:2,,,,value,,HEX:2,,,,value,,HEX:2,,,
+u,bm,,ODU_BC,ODU broadcast messages,70,fe,0704,,p1,,HEX:10,,,
+u,bm,,ODU2_status_01,ODU status,70,fe,0301,,TempOutdoor,,SIN,10,°C,,p1,,HEX:12,,,
+u,bm,,DateTime,Date and time,30,fe,0700,,nc,,IGN:2,,,ignore,time,,BTI,,,time,date,,BDA,,,date
+u,bm,,BM_status,BM BC status,30,fe,0704,,nc,,HEX:10,,,
+u,fha,,FHA_status_a,FHA status A,03,fe,0503,,p1,,HEX:8,,,p1
+u,mm,,ODU_bc_status,ODU status,f1,fe,0503,,p1,,HEX:8,,,p1
+u,mm,,ODU_cmd_01,ODU command,f1,fe,5023,,p1,,HEX:5,,,p1
+u,bm,,BM_cmd_01,BM2 command 1,30,fe,5023,,p1,,HEX:5,,,p1
+
+# MM messages
+u,fha,,BK100_BK101_BK102_BK103,FHA status B,03,f1,0800,,T1,,D2B,,°C,,TempOutdoor,,D2B,,°C,,TempAirSupply,,D2B,,°C,,TempDHWset,,D2B,,,
+u,bm,,BM2_cmd_01, BM2 command 1,30,03,0507,,p1,,HEX:8,,,p1
+u,bm,,BM2_cmd_02, BM2 command 2,30,03,5022,,p1,,HEX:3,,,p1
+u,bm,,BM2_cmd_03, BM2 command 3,30,ff,5022,,p1,,HEX:3,,,p1
+u,mm,,MM2_cmd_01, MM2 command 1,70,03,5022,,p1,,HEX:3,,,p1
+
