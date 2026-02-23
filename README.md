@@ -18,15 +18,16 @@ My installation consists of:
 
 * **FHA split heat pump** (master 3 - slave 8)
 * **BM-2 room controller** (master 30 - slaves 35 & 85)
-* **MM-2 mixer module** (master 70 - slaves 51 & 75)
+* **MM-2 mixer module** (slaves 51)
 * **Wolfnet interface** (master ff)
+* **Unknown controller** (master 70 / slave 75) 
 
 The system includes:
 
 * Floor heating
 * 200 L domestic hot water (DHW) tank
   
-The association of the slaves 51 and 75 to the master 70 and the MM-2 mixer unit is my deduction, but still hypothetical as I am missing a firm confirmation: any insight to confirm or reject is highly appreciated.  
+The unknown controller at address 70/75 is a Kromschroeder unit, possibly embedded into the FHA and controlling valves in the FHA IDU and ODU. I have no firm evidence of this deduction and would welcome any insight to confirm or reject this option.  
 
 
 ---
@@ -119,7 +120,7 @@ Exposed write parameters allow:
 Write commands can generally be derived from the corresponding read command by:
 
 1. Replacing read code `0x5022` with `0x5023`
-2. Adding a fixed `ULG` suffix to value `0x000001d5`(encoded as the literal `write` in the message description)
+2. Adding a fixed `ULG` suffix to value `0x0000015d`(encoded as the literal `write` in the message description)
 
 ### Known ebusd Limitation
 
