@@ -1,4 +1,21 @@
 type,circuit,level,name,comment,qq,zz,pbsb,id,*name,part,type,divisor/values,unit,comment
+
+# ebusd configuration file for Wolf system based on FHA - BM-2 - MM-2 - Wolfnet
+# Copyright (C) 2026 Cesare Liguori
+#
+# This file can be utilized, redistributed and or modified freely, 
+# under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This information is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You can find a copy of the GNU General Public License in the repository
+# from where you received this file, or see <http://www.gnu.org/licenses/>.
+
 *w,
 *r,
 #############################################
@@ -10,11 +27,11 @@ r,,,FHA_Status,FHA status,,,5022,cc6830,FHA_status,,UIN,0=Fault; 1=Disabled; 2=D
 
 r,,,CompOperatingMode,Compressor operating mode,,,5022,cc1633,value,,UIN,0=Efficient;1=Quiet;0x8000=N/A,,
 
-r,,,TempBoiler,Boiler temperature (KF),,,5022,cc0d00,TempBoiler,,SIN,10,°C,PM004
+r,,,TempBoiler,Boiler temperature (KF),,,5022,cc0d00,TempBoiler,,SIN,10,°C,
 r,,,TempReturn,Return temperature (RL),,,5022,cc1600,value,,UIN,10,°C,
 r,,,TempHead,Header temperature (SAF),,,5022,cc1727,value,,UIN,10,°C,
 r,,,TempDhw,DHW current temp (SF),,,5022,cc0e00,TempDhw,,UIN,10,°C,
-#r,,,TempFloor,Floor loop temperature,,51,5022,cc0f00,value,,UIN,10,°C,In a circuit with a mixer unit, the FHA does not know about the floor temp
+#r,,,TempFloor,Floor loop temperature,,,5022,cc0f00,value,,UIN,10,°C,In a circuit with a MM unit, the FHA does not know about the floor temp: ask the MM at slave 51 
 r,,,Flow,Flow (DFL sensor),,,5022,ccd917,value,,UIN,10,L/min,
 r,,,PressCircuit,Heating circuit pressure (DHK),,,5022,cc1a27,PressCircuit,,UIN,100,bar,
 
@@ -39,10 +56,10 @@ r,,,P_HotGas,Pressure hot gas,,,5022,cc0e33,P_HotGas,,SIN,10,bar,
 r,,,P_IntakeGas,Pressure intake gas,,,5022,cc0f33,P_IntakeGas,,SIN,10,bar,
 r,,,HTG_EEV,EEV HTG,,,5022,cc1433,HTG_EEV,,UIN,,,
 r,,,CLG_EEV,EEV CLG,,,5022,cc1533,CLG_EEV,,UIN,,,
-r,,,RotSpeed,Rotation speed ZHP,,,5022,cc5727,RotSpeed,,UIN,,%,
+r,,,RotSpeed,Rotation speed heating circulation pump,,,5022,cc5727,RotSpeed,,UIN,,%,
 
-r,,,Capacity,Current capacity specification Compressor,,,5022,cc6f01,Capacity,,UIN,,%,
-r,,,CompStatus,Compressor,,,5022,cc7930,Comp,,BI1,0=Off;1=On,,
+r,,,Capacity,Current capacity specification compressor,,,5022,cc6f01,Capacity,,UIN,,%,
+r,,,CompStatus,Compressor status,,,5022,cc7930,Comp,,BI1,0=Off;1=On,,
 r,,,FanSpeed,Fan speed,,,5022,cc6327,FanSpeed,,UIN,,rpm,
 r,,,StatusNight,Status night operation,,,5022,cc792a,StatusNight,,UIN,0=Off;1=On,,
 r,,,Status_DPM,DPM Status,,,5022,cc0633,Status_DPM,,UIN,0xfe40=Open;0x7d0=Closed,,
@@ -51,7 +68,7 @@ r,,,Status_PV,PV Status,,,5022,cc3f2a,Status_PV,,UIN,0=Off;1=normal operating mo
 r,,,Input_E1,Input E1,,,5022,cc1627,value,,UIN,0xfe40=Open;0x7d0=Closed,,
 r,,,Input_E3,Input E3,,,5022,cc0433,value,,UIN,0xfe40=Open;0x7d0=Closed,,
 r,,,Input_E4,Input E4,,,5022,cc0533,value,,UIN,0xfe40=Open;0x7d0=Closed,,
-r,,,Output_A3,Output A3,,,5022,cc362a,value,,UIN,0xfe40=Off;0x7d0=On,,		#or E_Heat Phase1?
+r,,,Output_A3,Output A3,,,5022,cc362a,value,,UIN,0xfe40=Off;0x7d0=On,,		#or ElBooster Phase1?
 r,,,Output_A4,Output A4,,,5022,cc372a,value,,UIN,0xfe40=Off;0x7d0=On,,
 r,,,PowerEl,Power consumption (WP + EHZ),,,5022,cc6530,PowerEl,,SIN,10,kW,
 r,,,PowerTh_2,Current secondary power,,,5022,cc6e30,PowerTh_2,,SIN,10,kW,
@@ -64,13 +81,13 @@ r,,,NoPowerOn,Number Power On,,,5022,cc5e27,value,,UIN,,,
 r,,,CompStarts,Compressor starts,,,5022,cc26022702,value,,ULG,,,
 r,,,FwVersionFHA,HCM-5 firmware,,,5022,cc9a01,FwVersionFHA,,UIN,100,,
 r,,,FwVersionODU,ODU firmware,,,5022,db1833,FwVersionODU,,UIN,100,,
-r,,,Correct_TempBoiler,T_boiler correction,,,5022,cc6c30,Correct_TempBoiler,,SIN,100,°C,
-r,,,Correct_TempBoiler2,T_boiler_2 correction,,,5022,cc0133,Correct_TempBoiler2,,SIN,100,°C,
-r,,,Correct_TempReturn,T_return correction,,,5022,cc6d30,Correct_TempReturn,,SIN,100,°C,
+r,,,Correct_TempBoiler,Boiler temperature correction,,,5022,cc6c30,Correct_TempBoiler,,SIN,100,°C,
+r,,,Correct_TempBoiler2,Secondary boiler temperature correction,,,5022,cc0133,Correct_TempBoiler2,,SIN,100,°C,
+r,,,Correct_TempReturn,Return temperature correction,,,5022,cc6d30,Correct_TempReturn,,SIN,100,°C,
 r,,,BuildWeek,Manufacturing week,,,5022,cc7d2a,BuildWeek,,UIN,,,
 r,,,BuildYear,Year of manufacture,,,5022,cc7e2a,BuildYear,,UIN,23=2023;24=2024;25=2025;26=2026,,
 r,,,SerialNumber,Serial number,,,5022,cc802a7f2a,value,,ULG,,,
-r,,,ModeDhw,DHW operating mode,,,5022,4b1733,value,,UIN,0=Efficient;1=Fast,,FP002
+r,,,ModeDhw,DHW operating mode,,,5022,4b1733,value,,UIN,0=Efficient;1=Fast,,
 #############################################
 # Statistics - Contractor mode
 #############################################

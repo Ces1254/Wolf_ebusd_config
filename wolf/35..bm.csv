@@ -1,4 +1,21 @@
 type,circuit,level,name,comment,qq,zz,pbsb,id,*name,part,type,divisor/values,unit,comment
+
+# ebusd configuration file for Wolf system based on FHA - BM-2 - MM-2 - Wolfnet
+# Copyright (C) 2026 Cesare Liguori
+#
+# This file can be utilized, redistributed and or modified freely, 
+# under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This information is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You can find a copy of the GNU General Public License in the repository
+# from where you received this file, or see <http://www.gnu.org/licenses/>.
+
 *w,
 *r,
 r,,,Date_BM2,Date BM-2,,,5022,00b027,,,UIN,,,date to be decoded

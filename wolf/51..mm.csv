@@ -1,23 +1,39 @@
 type,circuit,level,name,comment,qq,zz,pbsb,id,*name,part,type,divisor/values,unit,comment
+
+# ebusd configuration file for Wolf system based on FHA - BM-2 - MM-2 - Wolfnet
+# Copyright (C) 2026 Cesare Liguori
+#
+# This file can be utilized, redistributed and or modified freely, 
+# under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This information is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You can find a copy of the GNU General Public License in the repository
+# from where you received this file, or see <http://www.gnu.org/licenses/>.
+
 *w,
 *r,
 #############################################
 # Main
 #############################################
-r,,,TempFloor,Floor circuit temperature,,,5022,cc0f00,value,,UIN,10,°C,MP001
+r,,,TempFloor,Floor circuit temperature,,,5022,cc0f00,value,,UIN,10,°C,
 r,,,TempFloorSet,Mixer Set Temperature,,,5022,2c0400,value,,SIN,10,°C,
 r,,,FloorCircPump,Floor Circulation Pump,,,5022,705200,,,UIN,0=Off;1=On,,
 
-r,,,MI01,MI01 Minimum limit mixer circuit TV-min,,,5022,812b01,value,,SIN,10,°C,
-r,,,MI02,MI02 Maximum limit mixer circuit TV-max,,,5022,642800,value,,SIN,10,°C,
-r,,,MI03,MI03 Heating curve distance,,,5022,ed1101,value,,SIN,10,°C,
-r,,,MI05,MI05 Configuration,,,5022,6a210a,value,,UIN,,,
-r,,,MI06,MI06 Heating circuit run-on time,,,5022,c14201,value,,UIN,,min,
-r,,,MI07,MI07 P range mixer,,,5022,618f01,value,,SIN,10,°C,
-r,,,MI10,MI10 eBus feed,,,5022,45fbfd,value,,UIN,2=Auto,,not to be modified
+r,,,MI01,MI01 - Minimum temperature mixer circuit TV-min,,,5022,812b01,value,,SIN,10,°C,
+r,,,MI02,MI02 - Maximum temperature mixer circuit TV-max,,,5022,642800,value,,SIN,10,°C,
+r,,,MI03,MI03 - Heating curve gap,,,5022,ed1101,value,,SIN,10,°C,
+r,,,MI05,MI05 - Configuration,,,5022,6a210a,value,,UIN,,,
+r,,,MI06,MI06 - Heating circuit run-on time,,,5022,c14201,value,,UIN,,min,
+r,,,MI07,MI07 - P range mixer,,,5022,618f01,value,,SIN,10,°C,
+r,,,MI10,MI10 - eBus feed,,,5022,45fbfd,value,,UIN,2=Auto,,not to be modified
+r,,,MI17,MI17 - Boiler overtemp,,,5022,cc2d00,value,,UIN,10,°C,
 
 r,,,MMt_01,Mixer motor 1 status,,,5022,5c5600,value,,UIN,0=Off;1=Closing;2=Opening,,
 r,,,MMt_02,Mixer motor 2 status,,,5022,005700,value,,UIN,0=Off;1=Closing;2=Opening,,
-
-#r,,,MMP05,MM Op Status 5,,,5022,5c0100,value,,UIN,,,ping
 
