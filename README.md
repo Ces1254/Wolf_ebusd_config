@@ -119,7 +119,7 @@ Exposed write parameters allow:
 
 Write commands can generally be derived from the corresponding read command by replacing PBSB code `0x5022` with `0x5023`.
 
-Writing parameters to the BM-2 controller requires adding a fixed `ULG` suffix `0x0000015d`to the changed value. The constant field is encoded as `W` in the message descriptor, resulting in a message `w value;W`.
+Writing parameters to the BM-2 controller requires adding a fixed `ULG` suffix `0x0000015d`to the changed value. The constant field is encoded as `W` in the message descriptor, resulting in a message `w NAME 'value;W'`.
 
 ### Known ebusd Limitation
 
