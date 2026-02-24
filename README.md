@@ -117,10 +117,9 @@ Exposed write parameters allow:
 
 ### Write Command Structure
 
-Write commands can generally be derived from the corresponding read command by:
+Write commands can generally be derived from the corresponding read command by replacing PBSB code `0x5022` with `0x5023`.
 
-1. Replacing read code `0x5022` with `0x5023`
-2. Adding a fixed `ULG` suffix to value `0x0000015d`(encoded as the literal `write` in the message description)
+Writing parameters to the BM-2 controller requires adding a fixed `ULG` suffix `0x0000015d`to the changed value. The constant field is encoded as `W` in the message descriptor, resulting in a message `w value;W`.
 
 ### Known ebusd Limitation
 
@@ -149,7 +148,7 @@ Where possible, terminology matches the wording used in Wolf’s English web int
 However:
 
 * Some translations may not be ideal
-* Minor inconsistencies may exist
+* Minor inconsistencies may exist, often inherited from the Wolf app wording
 
 Contributions and improvements are very welcome.
 
