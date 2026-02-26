@@ -105,11 +105,15 @@ u,bm,,PM082_PM084_Pa087_Pa088_Pa089,BM Op Status 06_10,ff,85,5022,77ac27af27b427
 u,bm,,PM063_PM097_PM098_PM099_PM100,BM Op Status 11_05,ff,85,5022,0a8127472a482a492a4a2a,EcoFactor,,SIN,10,,,TempFloor,,SIN,10,°C,,TempClgCrvStrt,,SIN,10,°C,,Temp,,SIN,10,°C,,TempMixSet,,SIN,10,°C,
 u,bm,,OP016_PM058_PM059_PM061_PM062,BM Op Status 16_20,ff,85,5022,d344237b277c277e277f27,value,,UIN,,,,TempHtgCrvLow,,SIN,10,°C,,TempFlwHtgCrv,,SIN,10,°C,,TempHtgCrvStrt,,SIN,10,°C,,TempHtgCrvStd,,SIN,10,°C,
 u,bm,,PM021_PM022_PM036_PM044_OP025,BM Op Status 21_25,ff,85,5022,07160117018b022d234023,Temp_W_S_Change,,SIN,10,°C,,TempECO_ABS,,SIN,10,°C,,RoomInfluence,,UIN,0=Off;1=On,,,CircuitType,,UIN,0=Heating circuit;1=Heating + cooling circuit;2=Cooling circuit,,,value,,UIN,,,
-u,bm,,PM042_PM060_Pa065_PM081_PM082,BM Op Status 31_35,ff,85,5022,c792147d278727ab27ac27,value,,UIN,,,,TempRoomSet,,SIN,10,°C,,TempFloor,,SIN,10,°C,,HeatingDemand,,UIN,0=Initializing;1=Disabled;2=Floor drying;3=Schornsteinfeger;4=Remote control;5=Party mode;6=Holidays mode;7=Auto on;8=Auto off;9=Permanent operation;10=Reduced operation;11=Standby;12=Externally disabled;13=SmartHome;14=AutoOnCool;15=AutoOffCool;16=PermCooling,,,HeatingStatus,,UIN,0=Off;1=Heating;2=Reduced op;3=Eco;4=Reduced stop;5=OT shutdown;6=RT shutdown;7=OT anti icing;8=RT anti icing;9=SmartHome;10=DHW priority;11=Cooling;12=Moisture stop;13=DHW pre-purge,,
+u,bm,,PM042_PM060_Pa065_PM081_PM082,BM Op Status 31_35,ff,85,5022,c792147d278727ab27ac27,ControlMode,,UIN,0=Emergency;1=OT control;2=Room temp control;3=OT with room temp influence,,,TempRoomSet,,SIN,10,°C,,TempFloor,,SIN,10,°C,,HeatingDemand,,UIN,0=Initializing;1=Disabled;2=Floor drying;3=Schornsteinfeger;4=Remote control;5=Party mode;6=Holidays mode;7=Auto on;8=Auto off;9=Permanent operation;10=Reduced operation;11=Standby;12=Externally disabled;13=SmartHome;14=AutoOnCool;15=AutoOffCool;16=PermCooling,,,HeatingStatus,,UIN,0=Off;1=Heating;2=Reduced op;3=Eco;4=Reduced stop;5=OT shutdown;6=RT shutdown;7=OT anti icing;8=RT anti icing;9=SmartHome;10=DHW priority;11=Cooling;12=Moisture stop;13=DHW pre-purge,,
+u,bm,,Pa042_PM240_Pa060_Pb065_Pa081,BM Op Status 31_35,ff,85,5022,c3921441237d278727ab27,ControlMode,,UIN,0=Emergency;1=OT control;2=Room temp control;3=OT with room temp influence,,,ProgSel,,UIN,0=Standby;1=Auto;2=Auto htg;3=Auto clg;4=Perm htg;5=Perm clg10,,,TempRoomSet,,SIN,10,°C,,TempFloorLoop,,SIN,10,°C,,HeatingDemand,,UIN,0=Initializing;1=Disabled;2=Floor drying;3=Schornsteinfeger;4=Remote control;5=Party mode;6=Holidays mode;7=Automatic on;8=Automatic off;9=Permanent operation;10=Reduced operation;11=Standby;12=Externally disabled;13=SmartHome;14=AutoOnCool;15=AutoOffCool;16=PermCooling,,
 
 u,bm,,PM087,BM Op Status 43,ff,85,5022,77b427,TempRoom,,SIN,10,°C,
 u,bm,,PM088,BM Op Status 41,ff,85,5022,2bb527,SetValCorrection,,SIN,10,°C,
 u,bm,,PM089,BM Op Status 42,ff,85,5022,4bc327,TempOutdoorAvg,,SIN,10,°C,
+u,bm,,PM241,BM Op Status 43,ff,85,5022,c6462a,TimeProgramClg,,UIN,,,
+u,bm,,PM242,BM Op Status 44,ff,85,5022,c24f2a,TempDayClg,,SIN,10,°C,
+
 #
 #####  Read requests by BM2 controller to FHA unit - CRC not used - fixed to 0xcc
 #

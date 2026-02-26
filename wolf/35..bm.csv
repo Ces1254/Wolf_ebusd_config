@@ -44,6 +44,7 @@ r,,,HeatingDemand,Heating demand,,,5022,00ab27,HeatingDemand,,UIN,0=Initializing
 r,,,HeatingStatus,Heating status,,,5022,00ac27,HeatingStatus,,UIN,0=Off;1=Heating;2=Reduced op;3=Eco;4=Reduced stop;5=OT shutdown;6=RT shutdown;7=OT anti icing;8=RT anti icing;9=SmartHome;10=DHW priority;11=Cooling;12=Moisture stop;13=DHW pre-purge,,
 r,,,TimeProgramDhw,Time program DHW,,,5022,00ae27,TimeProgramDhw,,UIN,,,
 r,,,TimeProgramHtg,Time program heating,,,5022,00af27,TimeProgramHtg,,UIN,,,
+r,,,TimeProgramClg,Time program cooling,,,5022,00462a,TimeProgramClg,,UIN,,,
 r,,,TempRoom,Room temperature,,85,5022,00b427,value,,SIN,10,°C,
 #r,,,TempFloor,Floor loop temperature,,85,5022,008727,value,,SIN,10,°C,
 #r,,,B_TempOutdoor,Outside temperature,,85,5022,00d327,value,,SIN,10,°C,
@@ -55,6 +56,8 @@ r,,,Temp_W_S_Change,Winter/Summer change over,,85,5022,001601,value,,SIN,10,°C,
 r,,,CircuitType,Circuit type,,85,5022,002d23,value,,UIN,0=Heating circuit;1=Heating + cooling circuit;2=Cooling circuit,,
 r,,,TempDay,Day temperature,,85,5022,007d27,value,,SIN,10,°C,
 w,,,TempDay,Day temperature,,85,5023,cc7d27,value,,SIN,10,°C,,value,,ULG,0x0000015d=W,,write command
+r,,,TempDayClg,Day temperature cooling,,85,5022,004f2a,value,,SIN,10,°C,
+w,,,TempDayClg,Day temperature cooling,,85,5023,cc4f2a,value,,SIN,10,°C,,value,,ULG,0x0000015d=W,,write command
 r,,,SetValCorrection,Set value correction,,85,5022,00b527,value,,SIN,10,°C,
 w,,,SetValCorrection,Set value correction,,85,5023,ccb527,value,,SIN,10,°C,,value,,ULG,0x0000015d=W,,write command
 r,,,RoomInfluence,Room influence,,85,5022,008b02,value,,UIN,0=Off;1=On,,
