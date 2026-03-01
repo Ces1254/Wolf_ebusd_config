@@ -156,13 +156,13 @@ Contributions and improvements are very welcome.
 
 ## Home Assistant Integration
 
-I plan to publish a custom **Home Assistant (HA)** integration that:
+A custom integration for **Home Assistant (HA)** is provided [here](https://github.com/Ces1254/home_assistant_ebus_direct).
+This integration  
 
 * Imports entities directly from `ebusd`, without the need for an `MQTT` service
 * Simplifies monitoring and automation
 * Provides structured integration into HA
 
-Planned release: **March 2026**
 
 ---
 
