@@ -80,14 +80,14 @@ r,,,t_ElBoosterOn,E-heating operating hours,,,5022,cc3e2a,value,,UIN,,hours,
 r,,,NoPowerOn,Number Power On,,,5022,cc5e27,value,,UIN,,,
 r,,,CompStarts,Compressor starts,,,5022,cc26022702,value,,ULG,,,
 r,,,FwVersionFHA,HCM-5 firmware,,,5022,cc9a01,FwVersionFHA,,UIN,100,,
-r,,,FwVersionODU,ODU firmware,,,5022,db1833,FwVersionODU,,UIN,100,,
+r,,,FwVersionODU,ODU firmware,,,5022,cc1833,FwVersionODU,,UIN,100,,
 r,,,Correct_TempBoiler,Boiler temperature correction,,,5022,cc6c30,Correct_TempBoiler,,SIN,100,°C,
 r,,,Correct_TempBoiler2,Secondary boiler temperature correction,,,5022,cc0133,Correct_TempBoiler2,,SIN,100,°C,
 r,,,Correct_TempReturn,Return temperature correction,,,5022,cc6d30,Correct_TempReturn,,SIN,100,°C,
 r,,,BuildWeek,Manufacturing week,,,5022,cc7d2a,BuildWeek,,UIN,,,
 r,,,BuildYear,Year of manufacture,,,5022,cc7e2a,BuildYear,,UIN,23=2023;24=2024;25=2025;26=2026,,
 r,,,SerialNumber,Serial number,,,5022,cc802a7f2a,value,,ULG,,,
-r,,,ModeDhw,DHW operating mode,,,5022,4b1733,value,,UIN,0=Efficient;1=Fast,,
+r,,,ModeDhw,DHW operating mode,,,5022,cc1733,value,,UIN,0=Efficient;1=Fast,,
 #############################################
 # Statistics - Contractor mode
 #############################################
